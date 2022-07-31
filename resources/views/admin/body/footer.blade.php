@@ -9,5 +9,5 @@
     </li>
   </ul>
   </div>
-  &copy; 2022 <a href="#">Psd to Html Expert</a>. All Rights Reserved.
+  &copy; 2022 <a href="#">Easy Shop</a>. All Rights Reserved.
 </footer>
