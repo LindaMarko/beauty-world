@@ -33,6 +33,10 @@ Route::middleware([
     })->name('dashboard');
 });
 
+// All Admin routes
+
+Route::get('/admin/logout', [AdminController::class, 'destroy'])->name('admin.logout');
+
 Route::middleware([
     'auth:sanctum,web',
     config('jetstream.auth_session'),
