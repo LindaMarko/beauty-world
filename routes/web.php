@@ -38,6 +38,7 @@ Route::middleware([
 
 Route::get('/admin/logout', [AdminController::class, 'destroy'])->name('admin.logout');
 Route::get('/admin/profile', [AdminProfileController::class, 'AdminProfile'])->name('admin.profile');
+Route::get('/admin/profile/edit', [AdminProfileController::class, 'AdminProfileEdit'])->name('admin.profile.edit');
 
 Route::middleware([
     'auth:sanctum,web',
