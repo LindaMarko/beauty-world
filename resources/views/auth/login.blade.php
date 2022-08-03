@@ -50,15 +50,15 @@
 	<h4 class="checkout-subtitle">Create a new account</h4>
 	<p class="text title-tag-line">Create your new account.</p>
 	<form method="POST" action="{{ route('register') }}">
-        @csrf
-        <div class="form-group">
-		    <label class="info-title" for="exampleInputEmail1">Name <span>*</span></label>
-		    <input type="text" id="name" name="name" class="form-control unicase-form-control text-input" >
-            @error('name')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{$message}}</strong>
-            </span>
-            @enderror
+		@csrf
+		<div class="form-group">
+		<label class="info-title" for="exampleInputEmail1">Name <span>*</span></label>
+		<input type="text" id="name" name="name" class="form-control unicase-form-control text-input" >
+				@error('name')
+				<span class="invalid-feedback" role="alert">
+						<strong>{{$message}}</strong>
+				</span>
+				@enderror
 		</div>
 		<div class="form-group">
 	    	<label class="info-title" for="exampleInputEmail2">Email Address <span>*</span></label>

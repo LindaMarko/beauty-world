@@ -1,11 +1,33 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Hi {{ Auth::user()->name }}
-        </h2>
-    </x-slot>
+@extends('frontend.main_master')
+@section('content')
 
-    <div class="py-12">
-        <h1>This is Dashboard</h1>
+<div class="body-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"><br><br>
+                <img class="card-img-top" src="{{(!empty($user->profile_photo_path))
+                ? url('upload/user_images/'.$user->profile_photo_path)
+                : url('upload/no_image.jpg')}}" style="border-radius: 50%" height="100%" width="100%"><br><br>
+                <ul class="list-group list-group-flush">
+                    <a href="" class="btn btn-primary btn-sm btn-block">Home</a>
+                    <a href="{{route('user.profile')}}" class="btn btn-primary btn-sm btn-block">Profile Update</a>
+                    <a href="" class="btn btn-primary btn-sm btn-block">Change Password</a>
+                    <a href="{{route('user.logout')}}" class="btn btn-danger btn-sm btn-block">Logout</a>
+                </ul>
+            </div><!--end col md2-->
+
+            <div class="col-md-2">
+
+            </div><!--end col md2-->
+
+            <div class="col-md-6">
+                <div class="card">
+                    <h3 class="text-center"><span class="text-danger">Hi </span><strong>{{ Auth:: user()->name}}!</strong> Welcome To Easy Online Shop</h3>
+                </div>
+            </div><!--end col md8-->
+
+        </div><!--end row-->
     </div>
-</x-app-layout>
+</div>
+
+@endsection

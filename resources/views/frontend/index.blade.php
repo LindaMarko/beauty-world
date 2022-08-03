@@ -358,7 +358,7 @@
             <div class="item">
               <div class="products">
                 <div class="hot-deal-wrapper">
-                  <div class="image"> <img src="assets/images/hot-deals/p25.jpg" alt=""> </div>
+                  <div class="image"> <img src="{{asset('frontend/assets/images/hot-deals/p25.jpg')}}" alt=""> </div>
                   <div class="sale-offer-tag"><span>49%<br>
                     off</span></div>
                   <div class="timing-wrapper">
@@ -402,7 +402,7 @@
             <div class="item">
               <div class="products">
                 <div class="hot-deal-wrapper">
-                  <div class="image"> <img src="assets/images/hot-deals/p5.jpg" alt=""> </div>
+                  <div class="image"> <img src="{{asset('frontend/assets/images/hot-deals/p5.jpg')}}" alt=""> </div>
                   <div class="sale-offer-tag"><span>35%<br>
                     off</span></div>
                   <div class="timing-wrapper">
@@ -446,7 +446,7 @@
             <div class="item">
               <div class="products">
                 <div class="hot-deal-wrapper">
-                  <div class="image"> <img src="assets/images/hot-deals/p10.jpg" alt=""> </div>
+                  <div class="image"> <img src="{{asset('frontend/assets/images/hot-deals/p10.jpg')}}" alt=""> </div>
                   <div class="sale-offer-tag"><span>35%<br>
                     off</span></div>
                   <div class="timing-wrapper">
@@ -505,7 +505,7 @@
                       <div class="row product-micro-row">
                         <div class="col col-xs-5">
                           <div class="product-image">
-                            <div class="image"> <a href="#"> <img src="assets/images/products/p30.jpg" alt=""> </a> </div>
+                            <div class="image"> <a href="#"> <img src="{{asset('frontend/assets/images/products/p30.jpg')}}" alt=""> </a> </div>
                             <!-- /.image -->
 
                           </div>
@@ -791,7 +791,7 @@
                       <div class="row product-micro-row">
                         <div class="col col-xs-5">
                           <div class="product-image">
-                            <div class="image"> <a href="#"> <img src="assets/images/products/p28.jpg"  alt=""> </a> </div>
+                            <div class="image"> <a href="#"> <img src="{{asset('frontend/assets/images/products/p28.jpg')}}"  alt=""> </a> </div>
                             <!-- /.image -->
 
                           </div>
@@ -819,7 +819,7 @@
                       <div class="row product-micro-row">
                         <div class="col col-xs-5">
                           <div class="product-image">
-                            <div class="image"> <a href="#"> <img src="assets/images/products/p15.jpg"  alt=""> </a> </div>
+                            <div class="image"> <a href="#"> <img src="{{asset('frontend/assets/images/products/p15.jpg')}}"  alt=""> </a> </div>
                             <!-- /.image -->
 
                           </div>
@@ -1079,7 +1079,7 @@
         <div class="sidebar-widget  wow fadeInUp outer-top-vs ">
           <div id="advertisement" class="advertisement">
             <div class="item">
-              <div class="avatar"><img src="assets/images/testimonials/member1.png" alt="Image"></div>
+              <div class="avatar"><img src="{{asset('frontend/assets/images/testimonials/member1.png')}}" alt="Image"></div>
               <div class="testimonials"><em>"</em> Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
               <div class="clients_author">John Doe <span>Abc Company</span> </div>
               <!-- /.container-fluid -->
@@ -1107,7 +1107,7 @@
 
         <!-- ============================================== Testimonials: END ============================================== -->
 
-        <div class="home-banner"> <img src="assets/images/banners/LHS-banner.jpg" alt="Image"> </div>
+        <div class="home-banner"> <img src="{{asset('frontend/assets/images/banners/LHS-banner.jpg')}}" alt="Image"> </div>
       </div>
       <!-- /.sidemenu-holder -->
       <!-- ============================================== SIDEBAR : END ============================================== -->
@@ -1118,7 +1118,7 @@
 
         <div id="hero">
           <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
-            <div class="item" style="background-image: url(assets/images/sliders/01.jpg);">
+            <div class="item" style="background-image: url({{asset('frontend/assets/images/sliders/01.jpg')}});">
               <div class="container-fluid">
                 <div class="caption bg-color vertical-center text-left">
                   <div class="slider-header fadeInDown-1">Top Brands</div>
@@ -1132,7 +1132,7 @@
             </div>
             <!-- /.item -->
 
-            <div class="item" style="background-image: url(assets/images/sliders/02.jpg);">
+            <div class="item" style="background-image: url({{asset('frontend/assets/images/sliders/02.jpg')}});">
               <div class="container-fluid">
                 <div class="caption bg-color vertical-center text-left">
                   <div class="slider-header fadeInDown-1">Spring 2016</div>
@@ -1219,7 +1219,7 @@
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
-                          <div class="image"> <a href="detail.html"><img  src="assets/images/products/p1.jpg" alt=""></a> </div>
+                          <div class="image"> <a href="detail.html"><img  src="{{asset('frontend/assets/images/products/p1.jpg')}}" alt=""></a> </div>
                           <!-- /.image -->
 
                           <div class="tag new"><span>new</span></div>
@@ -1261,7 +1261,7 @@
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
-                          <div class="image"> <a href="detail.html"><img  src="assets/images/products/p2.jpg" alt=""></a> </div>
+                          <div class="image"> <a href="detail.html"><img  src="{{asset('frontend/assets/images/products/p2.jpg')}}" alt=""></a> </div>
                           <!-- /.image -->
 
                           <div class="tag hot"><span>hot</span></div>
@@ -1303,7 +1303,7 @@
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
-                          <div class="image"> <a href="detail.html"><img  src="assets/images/products/p4.jpg" alt=""></a> </div>
+                          <div class="image"> <a href="detail.html"><img  src="{{asset('frontend/assets/images/products/p4.jpg')}}" alt=""></a> </div>
                           <!-- /.image -->
 
                           <div class="tag sale"><span>sale</span></div>
@@ -1345,7 +1345,7 @@
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
-                          <div class="image"> <a href="detail.html"><img  src="assets/images/products/p3.jpg" alt=""></a> </div>
+                          <div class="image"> <a href="detail.html"><img  src="{{asset('frontend/assets/images/products/p3.jpg')}}" alt=""></a> </div>
                           <!-- /.image -->
 
                           <div class="tag sale"><span>sale</span></div>
@@ -2266,7 +2266,7 @@
           <div class="row">
             <div class="col-md-7 col-sm-7">
               <div class="wide-banner cnt-strip">
-                <div class="image"> <img class="img-responsive" src="assets/images/banners/home-banner1.jpg" alt=""> </div>
+                <div class="image"> <img class="img-responsive" src="{{asset('frontend/assets/images/banners/home-banner1.jpg')}}" alt=""> </div>
               </div>
               <!-- /.wide-banner -->
             </div>
