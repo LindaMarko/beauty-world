@@ -319,6 +319,7 @@
 	<script src="{{ asset('backend/js/template.js') }}"></script>
 	<script src="{{ asset('backend/js/pages/dashboard.js') }}"></script>
 
+
 	<!--SweetAlert-->
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

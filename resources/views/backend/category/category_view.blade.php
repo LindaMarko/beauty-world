@@ -50,7 +50,7 @@
     <!-- /.col -->
 
 
-    <!-- Add category Page -->
+    <!-- Add category -->
     <div class="col-4">
 
       <div class="box">
@@ -60,7 +60,7 @@
        <!-- /.box-header -->
        <div class="box-body">
          <div class="table-responsive">
-          <form method="POST" action="">
+          <form method="POST" action="{{route('category.store')}}">
             @csrf
 
             <div class="form-group">
