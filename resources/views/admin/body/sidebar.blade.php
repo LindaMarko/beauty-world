@@ -39,7 +39,8 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li class="{{ ($route == 'all.brand') ? 'active' : '' }}"><a href="{{route('all.brand')}}"><i class="ti-more"></i>All Brand</a></li>
+          <li class="{{ ($route == 'all.brand') ? 'active' : '' }}">
+            <a href="{{route('all.brand')}}"><i class="ti-more"></i>All Brand</a></li>
         </ul>
       </li>
 
@@ -51,7 +52,10 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="{{route('all.category')}}"><i class="ti-more"></i>All Category</a></li>
+          <li class="{{ ($route == 'all.category') ? 'active' : '' }}">
+            <a href="{{route('all.category')}}"><i class="ti-more"></i>All Category</a></li>
+          <li class="{{ ($route == 'all.subcategory') ? 'active' : '' }}">
+            <a href="{{route('all.subcategory')}}"><i class="ti-more"></i>All SubCategory</a></li>
         </ul>
       </li>
 
