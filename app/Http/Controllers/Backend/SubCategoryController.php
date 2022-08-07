@@ -84,13 +84,20 @@ class SubCategoryController extends Controller
 
     }
 
-    public function GetSubCategory($category_id){
-
+    public function GetSubCategory($category_id)
+    {
         $subcat = SubCategory::where('category_id',$category_id)->orderBy('subcategory_name_en','ASC')->get();
         return json_encode($subcat);
     }
 
-    public function SubSubCategoryStore(Request $request){
+    public function GetSubSubCategory($subcategory_id)
+    {
+        $subsubcat = SubSubCategory::where('subcategory_id',$subcategory_id)->orderBy('subsubcategory_name_en','ASC')->get();
+        return json_encode($subsubcat);
+    }
+
+    public function SubSubCategoryStore(Request $request)
+    {
 
         $request->validate([
              'category_id' => 'required',
@@ -115,7 +122,8 @@ class SubCategoryController extends Controller
 
      }
 
-     public function SubSubCategoryEdit($id){
+     public function SubSubCategoryEdit($id)
+     {
     	$categories = Category::orderBy('category_name_en','ASC')->get();
     	$subcategories = SubCategory::orderBy('subcategory_name_en','ASC')->get();
     	$subsubcategories = SubSubCategory::findOrFail($id);
@@ -123,7 +131,8 @@ class SubCategoryController extends Controller
 
     }
 
-    public function SubSubCategoryUpdate(Request $request){
+    public function SubSubCategoryUpdate(Request $request)
+    {
 
     	$subsubcat_id = $request->id;
 
@@ -140,7 +149,8 @@ class SubCategoryController extends Controller
 
     }
 
-    public function SubSubCategoryDelete($id){
+    public function SubSubCategoryDelete($id)
+    {
 
     	SubSubCategory::findOrFail($id)->delete();
 		return redirect()->back();
