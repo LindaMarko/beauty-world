@@ -27,7 +27,7 @@
               <select name="brand_id" class="form-control"  >
                 <option value="" selected="" disabled="">Select Brand</option>
                 @foreach($brands as $brand)
-                <option value="{{ $brand->id }}">{{ ucfirst($brand->brand_name_en) }}</option>
+                <option value="{{ $brand->id }}">{{ $brand->brand_name_en }}</option>
                 @endforeach
               </select>
               @error('brand_id')
@@ -44,7 +44,7 @@
           <select name="category_id" class="form-control"  >
             <option value="" selected="" disabled="">Select Category</option>
             @foreach($categories as $category)
-              <option value="{{ $category->id }}">{{ ucfirst($category->category_name_en) }}</option>
+              <option value="{{ $category->id }}">{{ $category->category_name_en }}</option>
             @endforeach
           </select>
             @error('category_id')
@@ -248,8 +248,8 @@
       <div class="form-group">
         <h5>Main Thumbnail <span class="text-danger">*</span></h5>
         <div class="controls">
-        <input type="file" name="product_thambnail" class="form-control" onChange="mainThumUrl(this)">
-          @error('product_thambnail')
+        <input type="file" name="image_link" class="form-control" onChange="mainThumUrl(this)">
+          @error('image_link')
         <span class="text-danger">{{ $message }}</span>
         @enderror
         <img src="" id="mainThmb">
@@ -276,7 +276,7 @@
           <div class="form-group">
           <h5>Short Description English</h5>
           <div class="controls">
-            <textarea name="short_descp_en" id="textarea" class="form-control" required placeholder="Textarea text"></textarea>
+            <textarea name="short_descp_en" id="textarea" class="form-control" placeholder="Textarea text"></textarea>
           </div>
         </div>
     </div> <!-- end col md 6 -->
@@ -285,7 +285,7 @@
       <div class="form-group">
         <h5>Short Description Swedish</h5>
         <div class="controls">
-           <textarea name="short_descp_sv" id="textarea" class="form-control" required placeholder="Textarea text"></textarea>
+           <textarea name="short_descp_sv" id="textarea" class="form-control" placeholder="Textarea text"></textarea>
         </div>
       </div>
     </div> <!-- end col md 6 -->
