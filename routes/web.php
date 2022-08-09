@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Frontend\IndexController;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
@@ -27,21 +28,24 @@ Route::group(['prefix' =>'admin', 'middleware' =>['admin:admin']], function(){
     Route::post('/login', [AdminController::class, 'store'])->name('admin.login');
 });
 
-Route::middleware(['auth:sanctum,admin', config('jetstream.auth_session'), 'verified'
-])->group(function () {
-    Route::get('/admin/dashboard', function () {
-        return view('admin.index');
-    })->name('dashboard');
-});
+Route::middleware(['auth:admin'])->group(function(){
 
-// All Admin routes
-Route::get('/admin/logout', [AdminController::class, 'destroy'])->name('admin.logout');
-Route::get('/admin/profile', [AdminProfileController::class, 'AdminProfile'])->name('admin.profile');
-Route::get('/admin/profile/edit', [AdminProfileController::class, 'AdminProfileEdit'])->name('admin.profile.edit');
-Route::post('/admin/profile/store', [AdminProfileController::class, 'AdminProfileStore'])->name('admin.profile.store');
-Route::get('/admin/change/password', [AdminProfileController::class, 'AdminChangePassword'])->name('admin.change.password');
-Route::post('/update/change/password', [AdminProfileController::class, 'AdminUpdateChangePassword'])->name('update.change.password');
+    Route::middleware(['auth:sanctum,admin', config('jetstream.auth_session'), 'verified'
+    ])->group(function () {
+        Route::get('/admin/dashboard', function () {
+            return view('admin.index');
+        })->name('dashboard');
+    });
 
+    // All Admin routes
+    Route::get('/admin/logout', [AdminController::class, 'destroy'])->name('admin.logout');
+    Route::get('/admin/profile', [AdminProfileController::class, 'AdminProfile'])->name('admin.profile');
+    Route::get('/admin/profile/edit', [AdminProfileController::class, 'AdminProfileEdit'])->name('admin.profile.edit');
+    Route::post('/admin/profile/store', [AdminProfileController::class, 'AdminProfileStore'])->name('admin.profile.store');
+    Route::get('/admin/change/password', [AdminProfileController::class, 'AdminChangePassword'])->name('admin.change.password');
+    Route::post('/update/change/password', [AdminProfileController::class, 'AdminUpdateChangePassword'])->name('update.change.password');
+
+});  // end Middleware admin
 
 // All User routes
 Route::middleware(['auth:sanctum,web', config('jetstream.auth_session'), 'verified'
@@ -110,4 +114,15 @@ Route::prefix('product')->group(function(){
     Route::get('/delete/{id}', [ProductController::class, 'ProductDelete'])->name('product.delete');
 });
 
+//Admin Slider routes
+Route::prefix('slider')->group(function(){
+    Route::get('/view', [SliderController::class, 'SliderView'])->name('manage-slider');
+    Route::post('/store', [SliderController::class, 'SliderStore'])->name('slider.store');
+    Route::get('/edit/{id}', [SliderController::class, 'SliderEdit'])->name('slider.edit');
+    Route::post('/update', [SliderController::class, 'SliderUpdate'])->name('slider.update');
+    Route::get('/delete/{id}', [SliderController::class, 'SliderDelete'])->name('slider.delete');
+    Route::get('/inactive/{id}', [SliderController::class, 'SliderInactive'])->name('slider.inactive');
+    Route::get('/active/{id}', [SliderController::class, 'SliderActive'])->name('slider.active');
+
+});
 
