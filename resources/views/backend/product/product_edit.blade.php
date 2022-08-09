@@ -29,7 +29,7 @@
                       <select name="brand_id" class="form-control" required="" >
                         <option value="" selected="" disabled="">Select Brand</option>
                         @foreach($brands as $brand)
-                        <option value="{{ $brand->brand_name_en }}" {{ $brand->brand_name_en == ucfirst($product->brand) ? 'selected': '' }} >{{ $brand->brand_name_en }}</option>
+                        <option value="{{ $brand->id }}" {{ $brand->brand_name_en == ucfirst($product->brand) ? 'selected': '' }} >{{ $brand->brand_name_en }}</option>
                         @endforeach
                       </select>
                       @error('brand_id')
@@ -46,7 +46,7 @@
                       <select name="category_id" class="form-control" required="" >
                         <option value="" selected="" disabled="">Select Category</option>
                         @foreach($categories as $category)
-                        <option value="{{ $category->category_name_en }}" {{ $category->category_name_en == ucfirst($product->product_type) ? 'selected': '' }} >{{ $category->category_name_en }}</option>
+                        <option value="{{ $category->id }}" {{ $category->category_name_en == ucfirst($product->product_type) ? 'selected': '' }} >{{ $category->category_name_en }}</option>
                         @endforeach
                       </select>
                       @error('category_id')
@@ -300,7 +300,6 @@
             <h5>Long Description English</h5>
             <div class="controls">
               <textarea id="editor1" name="long_descp_en" rows="10" cols="80">
-              Long Description English
               </textarea>
           </div>
         </div>
@@ -310,9 +309,7 @@
          <div class="form-group">
           <h5>Long Description Swedish</h5>
           <div class="controls">
-            <textarea id="editor2" name="long_descp_sv" rows="10" cols="80">
-            Long Description Swedish
-            </textarea>
+            <textarea id="editor2" name="long_descp_sv" rows="10" cols="80"></textarea>
           </div>
         </div>
       </div> <!-- end col md 6 -->
@@ -384,7 +381,7 @@
                 <img src="{{ asset($img->photo_name) }}" class="card-img-top" style="height: 130px; width: 280px;">
                 <div class="card-body">
                   <h5 class="card-title">
-                    <a href="" class="btn btn-sm btn-danger" id="delete" title="Delete Data"><i class="fa fa-trash"></i> </a>
+                    <a href="{{ route('product.multiimg.delete', $img->id) }}" class="btn btn-sm btn-danger" id="delete" title="Delete Data"><i class="fa fa-trash"></i> </a>
                   </h5>
                   <p class="card-text">
                     <div class="form-group">

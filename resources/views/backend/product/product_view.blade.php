@@ -23,6 +23,7 @@
 								<th>Product Name En</th>
 								<th>Product Brand</th>
 								<th>Product Type </th>
+								<th>Product Price </th>
 								<th>Action</th>
 							</tr>
 						</thead>
@@ -32,9 +33,10 @@
                 <td>{{ $item->product_name_en }}</td>
                 <td>{{ ucfirst($item->brand) }}</td>
                 <td>{{ ucfirst($item->product_type) }}</td>
+                <td>{{ $item->price }} {{ $item->price_sign }}</td>
                 <td>
                   <a href="{{ route('product.edit',$item->id) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i> </a>
-                  <a href="" class="btn btn-danger" title="Delete Data" id="delete"><i class="fa fa-trash"></i></a>
+                  <a href="{{ route('product.delete',$item->id) }}" class="btn btn-danger" title="Delete Data" id="delete"><i class="fa fa-trash"></i></a>
                 </td>
               </tr>
               @endforeach

@@ -33,6 +33,7 @@ class ProductController extends Controller
 
 			$product_id = Product::insertGetId([
 				'brand_id' => $request->brand_id,
+				'brand' => $request->brand_name,
 				'category_id' => $request->category_id,
 				'subcategory_id' => $request->subcategory_id,
 				'subsubcategory_id' => $request->subsubcategory_id,
@@ -158,7 +159,7 @@ class ProductController extends Controller
 
 			foreach ($imgs as $id => $img) {
 				$imgDel = MultiImg::findOrFail($id);
-				unlink($imgDel->photo_name);
+				@unlink($imgDel->photo_name);
 
 				$make_name = hexdec(uniqid()).'.'.$img->getClientOriginalExtension();
 				Image::make($img)->resize(917,1000)->save('upload/products/multi-image/'.$make_name);
@@ -179,7 +180,7 @@ class ProductController extends Controller
 		{
 			$pro_id = $request->id;
 			$oldImage = $request->old_img;
-			unlink($oldImage);
+			@unlink($oldImage);
 
 			 $image = $request->file('image_link');
 				 $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
@@ -196,6 +197,30 @@ class ProductController extends Controller
 
 		}
 
+		//// Multi Image Delete ////
+		public function MultiImageDelete($id)
+		{
+				$oldimg = MultiImg::findOrFail($id);
+				@unlink($oldimg->photo_name);
+				MultiImg::findOrFail($id)->delete();
 
+				return redirect()->back();
+		}
+
+		public function ProductDelete($id)
+		{
+			$product = Product::findOrFail($id);
+			@unlink($product->image_link);
+			Product::findOrFail($id)->delete();
+
+			$images = MultiImg::where('product_id',$id)->get();
+			foreach ($images as $img) {
+				@unlink($img->photo_name);
+				MultiImg::where('product_id',$id)->delete();
+			}
+
+	 		return redirect()->back();
+
+		}
 
 }

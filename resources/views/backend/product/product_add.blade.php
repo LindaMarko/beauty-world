@@ -28,6 +28,7 @@
                 <option value="" selected="" disabled="">Select Brand</option>
                 @foreach($brands as $brand)
                 <option value="{{ $brand->id }}">{{ $brand->brand_name_en }}</option>
+                {{-- <option type="hidden" name="brand_name" value="{{ $brand->brand_name_en }}"> --}}
                 @endforeach
               </select>
               @error('brand_id')
@@ -248,7 +249,7 @@
       <div class="form-group">
         <h5>Main Thumbnail <span class="text-danger">*</span></h5>
         <div class="controls">
-        <input type="file" name="image_link" class="form-control" onChange="mainThumUrl(this)">
+        <input type="file" name="image_link" class="form-control" required onChange="mainThumUrl(this)">
           @error('image_link')
         <span class="text-danger">{{ $message }}</span>
         @enderror
@@ -261,7 +262,7 @@
       <div class="form-group">
         <h5>Multiple Image</h5>
         <div class="controls">
-        <input type="file" name="multi_img[]" class="form-control" multiple="" id="multiImg">
+        <input type="file" name="multi_img[]" class="form-control" required  multiple="" id="multiImg">
         @error('multi_img')
         <span class="text-danger">{{ $message }}</span>
         @enderror
@@ -296,9 +297,7 @@
         <div class="form-group">
 			    <h5>Long Description English</h5>
 			    <div class="controls">
-	          <textarea id="editor1" name="long_descp_en" rows="10" cols="80">
-		          Long Description English
-						</textarea>
+	          <textarea id="editor1" name="long_descp_en" rows="10" cols="80"></textarea>
 	 		    </div>
 		    </div>
 			</div> <!-- end col md 6 -->
@@ -307,9 +306,7 @@
         <div class="form-group">
 			    <h5>Long Description Swedish</h5>
 			    <div class="controls">
-            <textarea id="editor2" name="long_descp_sv" rows="10" cols="80">
-		          Long Description Swedish
-						</textarea>
+            <textarea id="editor2" name="long_descp_sv" rows="10" cols="80"></textarea>
 	 		    </div>
 		    </div>
 	    </div>
