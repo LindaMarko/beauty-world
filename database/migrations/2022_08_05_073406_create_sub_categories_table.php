@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->integer('category_id');
             $table->string('subcategory_name_en');
-            $table->string('subcategory_name_hin');
-            $table->string('subcategory_slug_en');
-            $table->string('subcategory_slug_hin');
+            $table->string('subcategory_name_sv')->nullable();
+            $table->string('subcategory_slug_en')->nullable();
+            $table->string('subcategory_slug_sv')->nullable();
             $table->timestamps();
         });
     }
