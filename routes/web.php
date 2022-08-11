@@ -134,3 +134,5 @@ Route::prefix('slider')->group(function(){
 Route::get('/language/swedish', [LanguageController::class, 'Swedish'])->name('swedish.language');
 Route::get('/language/english', [LanguageController::class, 'English'])->name('english.language');
 
+// Frontend Product Details Page url
+Route::get('/product/details/{id}/{slug}', [IndexController::class, 'ProductDetails']);

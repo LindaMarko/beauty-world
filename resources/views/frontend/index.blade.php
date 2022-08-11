@@ -1,4 +1,7 @@
 @extends('frontend.main_master')
+@section('title')
+Home - Beauty World
+@endsection
 @section('content')
 
 <div class="body-content outer-top-xs" id="top-banner-and-menu">
@@ -931,7 +934,7 @@
                       <div class="product">
                         <div class="product-image">
                           <div class="image">
-                            <a href="detail.html"><img  src="{{ asset($product->image_link)}}" alt=""></a>
+                            <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"><img  src="{{ asset($product->image_link)}}" alt=""></a>
                           </div>
                           <!-- /.image -->
                           @php
@@ -951,7 +954,7 @@
                         <!-- /.product-image -->
                         <div class="product-info text-left">
                           <h3 class="name">
-                            <a href="detail.html">
+                            <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}">
                               @if(session()->get('language') == 'swedish') {{ $product->product_name_sv }}
                               @else {{ $product->product_name_en }}
                               @endif
@@ -1009,7 +1012,7 @@
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
-                          <div class="image"> <a href="detail.html"><img  src="{{ asset($product->image_link) }}" alt=""></a> </div>
+                          <div class="image"> <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"><img  src="{{ asset($product->image_link) }}" alt=""></a> </div>
                           <!-- /.image -->
                           @php
                           $amount = $product->price - $product->discount_price;
@@ -1025,7 +1028,7 @@
                         <!-- /.product-image -->
                         <div class="product-info text-left">
                           <h3 class="name">
-                            <a href="detail.html">
+                            <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}">
                               @if(session()->get('language') == 'swedish') {{ $product->product_name_sv }}
                               @else {{ $product->product_name_en }}
                               @endif
