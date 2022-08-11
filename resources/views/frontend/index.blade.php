@@ -941,8 +941,8 @@ Home - Beauty World
                           $amount = $product->price - $product->discount_price;
                           $discount = ($amount/$product->price) * 100;
                           @endphp
-                          <div class="tag new"><span>new</span></div>
-                        </div>
+                          {{-- <div class="tag new"><span>new</span></div>
+                        </div> --}}
                         <div>
                           @if ($product->discount_price == NULL)
                           <div class="tag new"><span>new</span></div>
@@ -950,7 +950,7 @@ Home - Beauty World
                           <div class="tag hot"><span>{{ round($discount) }}%</span></div>
                           @endif
                         </div>
-                        {{-- </div> --}}
+                        </div>
                         <!-- /.product-image -->
                         <div class="product-info text-left">
                           <h3 class="name">
@@ -1025,6 +1025,7 @@ Home - Beauty World
                             <div class="tag hot"><span>{{ round($discount) }}%</span></div>
                             @endif
                           </div>
+                        </div>
                         <!-- /.product-image -->
                         <div class="product-info text-left">
                           <h3 class="name">
@@ -1092,7 +1093,7 @@ Home - Beauty World
             <!-- /.col -->
             <div class="col-md-5 col-sm-5">
               <div class="wide-banner cnt-strip">
-                <div class="image"> <img class="img-responsive" src="assets/images/banners/home-banner2.jpg" alt=""> </div>
+                <div class="image"> <img class="img-responsive" src="{{asset('frontend/assets/images/banners/home-banner2.jpg')}}" alt=""> </div>
               </div>
               <!-- /.wide-banner -->
             </div>

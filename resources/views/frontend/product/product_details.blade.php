@@ -21,7 +21,7 @@
 			<div class='col-md-3 sidebar'>
 				<div class="sidebar-module-container">
 				<div class="home-banner outer-top-n">
-          img src="{{ asset('frontend/assets/images/banners/LHS-banner.jpg') }}" alt="Image">
+          <img src="{{ asset('frontend/assets/images/banners/banner-pd.jpg') }}" alt="Image">
         </div>
 
 
@@ -277,16 +277,25 @@
       <div class="col-xs-12 col-sm-6 col-md-5 gallery-holder">
         <div class="product-item-holder size-big single-product-gallery small-gallery">
           <div id="owl-single-product">
-            @foreach($multiImag as $img)
+            <div class="image">
+              <a href="{{ asset($product->image_link) }} ">
+                <img  alt="" src="{{ asset($product->image_link ) }} " data-echo="{{ asset($product->image_link ) }} " />
+              </a>
+            </div><!-- /.single-product-gallery-item -->
+
+
+            <!----- IN CASE OF MULTIPLE IMAGES ------>
+
+            {{-- @foreach($multiImag as $img)
             <div class="single-product-gallery-item" id="slide{{ $img->id }}">
               <a data-lightbox="image-1" data-title="Gallery" href="{{ asset($img->photo_name ) }} ">
                 <img class="img-responsive" alt="" src="{{ asset($img->photo_name ) }} " data-echo="{{ asset($img->photo_name ) }} " />
               </a>
             </div><!-- /.single-product-gallery-item -->
-            @endforeach
+            @endforeach --}}
           </div><!-- /.single-product-slider -->
 
-          <div class="single-product-gallery-thumbs gallery-thumbs">
+          {{-- <div class="single-product-gallery-thumbs gallery-thumbs">
             <div id="owl-single-product-thumbnails">
               @foreach($multiImag as $img)
                 <div class="item">
@@ -296,7 +305,7 @@
                 </div>
               @endforeach
               </div><!-- /#owl-single-product-thumbnails -->
-            </div><!-- /.gallery-thumbs -->
+            </div><!-- /.gallery-thumbs --> --}}
         </div><!-- /.single-product-gallery -->
     </div><!-- /.gallery-holder -->
 
@@ -855,5 +864,5 @@
     </div><!-- /.col -->
     <div class="clearfix"></div>
     </div><!-- /.row -->
-    </div>
+  </div>
 @endsection

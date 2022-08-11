@@ -25,9 +25,7 @@ class ProductSeeder extends Seeder
             $product = (array)$product;
 
             Product::create(
-                // ['id' => $product['id']],
                 [
-                    // 'id' => $product['id'],
                     'product_name_en' => $product['name'],
                     'product_slug_en' => strtolower(str_replace(' ', '-', $product['name'])),
                     'product_type' => $product['product_type'],
