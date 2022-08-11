@@ -44,11 +44,10 @@ class CategoryController extends Controller
         return view('backend.category.category_edit', compact('category'));
     }
 
-    public function CategoryUpdate(Request $request)
+    public function CategoryUpdate(Request $request, $id)
     {
-        $category_id = $request->id;
 
-        Category::findOrFail($category_id)->update([
+        Category::findOrFail($id)->update([
             'category_name_en' => $request->category_name_en,
             'category_name_sv' => $request->category_name_sv,
             'category_slug_en' => strtolower(str_replace('','-',$request->category_name_en)),
