@@ -23,7 +23,7 @@
 	<div class="social-sign-in outer-top-xs">
 		<a href="#" class="facebook-sign-in"><i class="fa fa-facebook"></i> Sign In with Facebook</a>
 		<a href="#" class="twitter-sign-in"><i class="fa fa-twitter"></i> Sign In with Twitter</a>
-	</div>
+	</div><br><br>
 	<form method="POST" action="{{ isset($guard) ? url($guard.'/login') : route('login') }}">
         @csrf
 		<div class="form-group">
@@ -48,7 +48,7 @@
 <!-- create a new account -->
 <div class="col-md-6 col-sm-6 create-new-account">
 	<h4 class="checkout-subtitle">Create a new account</h4>
-	<p class="text title-tag-line">Create your new account.</p>
+	<p class="text title-tag-line">Create your new account.</p><br><br>
 	<form method="POST" action="{{ route('register') }}">
 		@csrf
 		<div class="form-group">

@@ -29,6 +29,7 @@ class ProductSeeder extends Seeder
                     'product_name_en' => $product['name'],
                     'product_slug_en' => strtolower(str_replace(' ', '-', $product['name'])),
                     'product_type' => $product['product_type'],
+                    'product_tags_en' => implode(",", $product['tag_list']),
                     'price' => $product['price'],
                     'price_sign' => $product['price_sign'],
                     'category_name_en' => $product['category'],

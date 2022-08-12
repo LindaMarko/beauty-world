@@ -54,6 +54,7 @@ return new class extends Migration
             $table->string('product_name_sv')->nullable();
             $table->string('product_slug_en')->nullable();
             $table->string('product_slug_sv')->nullable();
+            $table->string('product_tags_en')->nullable();
             $table->string('product_type');
             $table->string('brand')->nullable();
             $table->string('category_name_en')->nullable();
@@ -64,10 +65,10 @@ return new class extends Migration
             $table->string('image_link');
             $table->longText('description_en')->nullable();
             $table->longText('description_sv')->nullable();
-            $table->integer('hot_deals')->nullable();
-            $table->integer('featured')->nullable();
-            $table->integer('special_offer')->nullable();
-            $table->integer('special_deals')->nullable();
+            $table->integer('hot_deals')->default(1);
+            $table->integer('featured')->default(1);
+            $table->integer('special_offer')->default(1);
+            $table->integer('special_deals')->default(1);
             $table->integer('status')->default(1);
             $table->timestamps();
         });
