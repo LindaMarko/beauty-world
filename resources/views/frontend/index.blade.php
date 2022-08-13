@@ -11,67 +11,7 @@ Home - Beauty World
       <div class="col-xs-12 col-sm-12 col-md-3 sidebar">
 
         <!-- ================================== TOP NAVIGATION ================================== -->
-        <div class="side-menu animate-dropdown outer-bottom-xs">
-          <div class="head"><i class="icon fa fa-align-justify fa-fw"></i> Categories</div>
-          <nav class="yamm megamenu-horizontal">
-            <ul class="nav">
-              @foreach($categories as $category)
-              <li class="dropdown menu-item"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon {{ $category->category_icon }}" aria-hidden="true"></i>
-                @if(session()->get('language') == 'swedish') {{ $category->category_name_sv }}
-                @else {{ str_replace('_', ' ', $category->category_name_en) }}
-                @endif
-                </a>
-
-                {{-- <ul class="dropdown-menu mega-menu">
-                  <li class="yamm-content">
-                    <div class="row">
-                    <!--   // Get SubCategory Table Data -->
-                    @php
-                    $subcategories = App\Models\SubCategory::where('category_id',$category->id)->orderBy('subcategory_name_en','ASC')->get();
-                    @endphp
-
-                    @foreach($subcategories as $subcategory)
-                      <div class="col-sm-12 col-md-3">
-                      <h2 class="title">
-                        @if(session()->get('language') == 'swedish') {{ $subcategory->subcategory_name_sv }}
-                        @else {{ $subcategory->subcategory_name_en }}
-                        @endif
-                      </h2>
-
-                      <!--   // Get SubSubCategory Table Data -->
-                        @php
-                        $subsubcategories = App\Models\SubSubCategory::where('subcategory_id',$subcategory->id)->orderBy('subsubcategory_name_en','ASC')->get();
-                        @endphp
-
-                        @foreach($subsubcategories as $subsubcategory)
-                          <ul class="links list-unstyled">
-                            <li>
-                              <a href="#">
-                              @if(session()->get('language') == 'swedish') {{ $subsubcategory->subsubcategory_name_sv }}
-                              @else {{ $subsubcategory->subsubcategory_name_en }}
-                              @endif
-                              </a>
-                            </li>
-                          </ul>
-                        @endforeach <!-- // End SubSubCategory Foreach -->
-                        </div>
-                        <!-- /.col -->
-                    @endforeach  <!-- End SubCategory Foreach -->
-                    </div>
-                    <!-- /.row -->
-                  </li>
-                  <!-- /.yamm-content -->
-                </ul>
-                <!-- /.dropdown-menu --> --}}
-              </li>
-              <!-- /.menu-item -->
-              @endforeach  <!-- End Category Foreach -->
-            </ul>
-            <!-- /.nav -->
-          </nav>
-          <!-- /.megamenu-horizontal -->
-        </div>
-        <!-- /.side-menu -->
+        @include('frontend.common.vertical_menu')
         <!-- ================================== TOP NAVIGATION : END ================================== -->
 
         <!-- ============================================== HOT DEALS ============================================== -->
@@ -260,35 +200,7 @@ Home - Beauty World
         <!-- ============================================== NEWSLETTER: END ============================================== -->
 
         <!-- ============================================== Testimonials============================================== -->
-        <div class="sidebar-widget  wow fadeInUp outer-top-vs ">
-          <div id="advertisement" class="advertisement">
-            <div class="item">
-              <div class="avatar"><img src="{{asset('frontend/assets/images/testimonials/member1.png')}}" alt="Image"></div>
-              <div class="testimonials"><em>"</em> Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
-              <div class="clients_author">John Doe <span>Abc Company</span> </div>
-              <!-- /.container-fluid -->
-            </div>
-            <!-- /.item -->
-
-            <div class="item">
-              <div class="avatar"><img src="assets/images/testimonials/member3.png" alt="Image"></div>
-              <div class="testimonials"><em>"</em>Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
-              <div class="clients_author">Stephen Doe <span>Xperia Designs</span> </div>
-            </div>
-            <!-- /.item -->
-
-            <div class="item">
-              <div class="avatar"><img src="assets/images/testimonials/member2.png" alt="Image"></div>
-              <div class="testimonials"><em>"</em> Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
-              <div class="clients_author">Saraha Smith <span>Datsun &amp; Co</span> </div>
-              <!-- /.container-fluid -->
-            </div>
-            <!-- /.item -->
-
-          </div>
-          <!-- /.owl-carousel -->
-        </div>
-
+        @include('frontend.common.testimonials')
         <!-- ============================================== Testimonials: END ============================================== -->
 
         <div class="home-banner"> <img src="{{asset('frontend/assets/images/banners/LHS-banner.jpg')}}" alt="Image"> </div>
