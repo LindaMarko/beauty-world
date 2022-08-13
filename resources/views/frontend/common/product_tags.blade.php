@@ -22,7 +22,7 @@ foreach ($productsWithTags as $product) {
     @if(session()->get('language') == 'swedish')
       @foreach($tags_sv as $tag)
         @if($tag)
-        <a class="item active" title="{{$tag}}" href="category.html">
+        <a class="item active" title="{{$tag}}" href="{{ url('product/tag/'.$tag) }}">
           {{-- {{ str_replace(',',' ',$tag->product_tags_en)  }} --}}
           {{ ucfirst($tag) }}
         </a>
@@ -31,7 +31,7 @@ foreach ($productsWithTags as $product) {
     @else
       @foreach($tags_en as $tag)
         @if($tag)
-          <a class="item active" title="{{$tag}}" href="category.html">
+          <a class="item active" title="{{$tag}}" href="{{ url('product/tag/'.$tag) }}">
             {{-- {{ str_replace(',',' ',$tag->product_tags_en)  }} --}}
             {{ ucfirst($tag) }}
           </a>

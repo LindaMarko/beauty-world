@@ -100,4 +100,13 @@ class IndexController extends Controller
         return view('frontend.product.product_details',compact('product','multiImag'));
 
 	}
+
+    public function TagWiseProduct($tag)
+    {
+		$products = Product::where('status',1)->where('product_tags_en',$tag)->where('product_tags_sv',$tag)->orderBy('id','DESC')->get();
+        $categories = Category::orderBy('category_name_en','ASC')->get();
+		return view('frontend.tags.tags_view',compact('products','categories'));
+
+
+	}
 }
