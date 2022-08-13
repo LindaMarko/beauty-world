@@ -1,12 +1,11 @@
 @php
-$productsWithTags = App\Models\Product::whereNotNull('product_tags_en')->get();
+$productsWithTags = App\Models\Product::whereNotNull('product_tags_en')->where('price', '!=', '0.0' )->get();
 $tags_en = array();
 foreach ($productsWithTags as $product) {
-  $product_tags = explode(',', $product->product_tags_en);
 
-  for($i = 0; $i < count($product_tags); ++$i) {
-    if(!in_array($product_tags[$i], $tags_en)) {
-        array_push($tags_en, $product_tags[$i]);
+  for($i = 0; $i < count($product->product_tags_en); ++$i) {
+    if(!in_array($product->product_tags_en[$i], $tags_en)) {
+        array_push($tags_en, $product->product_tags_en[$i]);
     }
   }
 }

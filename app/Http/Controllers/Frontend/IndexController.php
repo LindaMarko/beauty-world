@@ -103,9 +103,23 @@ class IndexController extends Controller
 
     public function TagWiseProduct($tag)
     {
-		$products = Product::where('status',1)->where('product_tags_en',$tag)->where('product_tags_sv',$tag)->orderBy('id','DESC')->get();
+
+        $productsWithTags = Product::whereNotNull('product_tags_en')->where('price', '!=', '0.0' )->get();
+        $productsWithClickedTag = array();
+        foreach( $productsWithTags as $product) {
+            for($i = 0; $i < count($product->product_tags_en); ++$i) {
+                if(in_array($tag, $product->product_tags_en )) {
+                    if(!in_array($product, $productsWithClickedTag)) {
+                        array_push($productsWithClickedTag, $product);
+                    }
+
+                }
+              }
+        }
+
+		// $products = Product::where('status',1)->where('product_tags_en',$tag)->where('product_tags_sv',$tag)->orderBy('id','DESC')->get();
         $categories = Category::orderBy('category_name_en','ASC')->get();
-		return view('frontend.tags.tags_view',compact('products','categories'));
+		return view('frontend.tags.tags_view',compact('productsWithClickedTag','categories'));
 
 
 	}

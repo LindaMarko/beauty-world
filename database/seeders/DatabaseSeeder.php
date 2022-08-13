@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Http;
 use App\Models\Category;
 use App\Models\Brand;
+use App\Models\Slider;
 
 class DatabaseSeeder extends Seeder
 {
@@ -56,6 +57,15 @@ class DatabaseSeeder extends Seeder
 
 
         }
+
+        $sliders = [
+            ['slider_img'=>'upload/slider/1740935906321460.jpg'],
+            ['slider_img'=>'upload/slider/1740936009142255.jpg'],
+            ['slider_img'=>'upload/slider/1740936035636831.jpg'],
+
+        ];
+
+        Slider::insert($sliders);
 
     }
 }

@@ -54,7 +54,7 @@ return new class extends Migration
             $table->string('product_name_sv')->nullable();
             $table->string('product_slug_en')->nullable();
             $table->string('product_slug_sv')->nullable();
-            $table->string('product_tags_en')->nullable();
+            $table->json('product_tags_en')->nullable();
             $table->string('product_type');
             $table->string('brand')->nullable();
             $table->string('category_name_en')->nullable();

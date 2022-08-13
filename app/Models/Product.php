@@ -11,4 +11,8 @@ class Product extends Model
 
     protected $guarded = [];
 
+    protected $casts = [
+        'product_tags_en' => 'array',
+    ];
+
 }
