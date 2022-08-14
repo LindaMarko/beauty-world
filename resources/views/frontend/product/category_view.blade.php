@@ -1,7 +1,7 @@
 @extends('frontend.main_master')
 @section('content')
 @section('title')
-Tag Wise Products
+Category Wise Products
 @endsection
 @php
 // dd($productsWithClickedTag);
@@ -237,7 +237,7 @@ Tag Wise Products
             </div>
             <!-- /.col -->
             <div class="col col-sm-6 col-md-4 text-right">
-              <div class="pagination-container">
+              {{-- <div class="pagination-container">
                 <ul class="list-inline list-unstyled">
                   <li class="prev"><a href="#"><i class="fa fa-angle-left"></i></a></li>
                   <li><a href="#">1</a></li>
@@ -247,7 +247,7 @@ Tag Wise Products
                   <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li>
                 </ul>
                 <!-- /.list-inline -->
-              </div>
+              </div> --}}
               <!-- /.pagination-container --> </div>
             <!-- /.col -->
           </div>
@@ -262,7 +262,7 @@ Tag Wise Products
             <div class="tab-pane active " id="grid-container">
               <div class="category-product">
                 <div class="row">
-                  @foreach($productsWithClickedTag as $product)
+                  @foreach($products as $product)
                   <div class="col-sm-6 col-md-4 wow fadeInUp">
                     <div class="products">
                       <div class="product">
@@ -329,7 +329,7 @@ Tag Wise Products
             <!--            //////////////////// Product List View Start ////////////// -->
             <div class="tab-pane "  id="list-container">
               <div class="category-product">
-                @foreach($productsWithClickedTag  as $product)
+                @foreach($products as $product)
                 <div class="category-product-inner wow fadeInUp">
                   <div class="products">
                     <div class="product-list product">
@@ -411,7 +411,7 @@ Tag Wise Products
             <div class="text-right">
               <div class="pagination-container">
                 <ul class="list-inline list-unstyled">
-                  {{-- {{ $products->links()  }} --}}
+                  {{ $products->links()  }}
                 </ul>
                 <!-- /.list-inline -->
               </div>

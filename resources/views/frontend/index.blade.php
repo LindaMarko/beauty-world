@@ -203,7 +203,7 @@ Home - Beauty World
         @include('frontend.common.testimonials')
         <!-- ============================================== Testimonials: END ============================================== -->
 
-        <div class="home-banner"> <img src="{{asset('frontend/assets/images/banners/LHS-banner.jpg')}}" alt="Image"> </div>
+        <div class="home-banner"> <img src="{{asset('frontend/assets/images/banners/banner-pd.jpg')}}" alt="Image"> </div>
       </div>
       <!-- /.sidemenu-holder -->
       <!-- ============================================== SIDEBAR : END ============================================== -->
@@ -707,10 +707,10 @@ Home - Beauty World
           <div class="row">
             <div class="col-md-12">
               <div class="wide-banner cnt-strip">
-                <div class="image"> <img class="img-responsive" src="assets/images/banners/home-banner.jpg" alt=""> </div>
+                <div class="image"> <img class="img-responsive" src="{{asset('frontend/assets/images/banners/home-banner.jpg')}}" alt=""> </div>
                 <div class="strip strip-text">
                   <div class="strip-inner">
-                    <h2 class="text-right">New Mens Fashion<br>
+                    <h2 class="text-right">New Palettes<br>
                       <span class="shopping-needs">Save up to 40% off</span></h2>
                   </div>
                 </div>
@@ -1092,7 +1092,7 @@ Home - Beauty World
         <!-- ============================================== BLOG SLIDER : END ============================================== -->
 
         <!-- ============================================== FEATURED PRODUCTS ============================================== -->
-        <section class="section wow fadeInUp new-arriavls">
+        {{-- <section class="section wow fadeInUp new-arriavls">
           <h3 class="section-title">New Arrivals</h3>
           <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs">
             <div class="item item-carousel">
@@ -1348,7 +1348,7 @@ Home - Beauty World
             <!-- /.item -->
           </div>
           <!-- /.home-owl-carousel -->
-        </section>
+        </section> --}}
         <!-- /.section -->
         <!-- ============================================== FEATURED PRODUCTS : END ============================================== -->
 

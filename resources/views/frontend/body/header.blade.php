@@ -171,7 +171,7 @@
 
                 @foreach($categories as $category)
                   <li class="dropdown yamm mega-menu">
-                    <a href="home.html" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="{{url('category/products/'.$category->category_name_en )}}" >
                       @if(session()->get('language') == 'swedish') {{ $category->category_name_sv }}
                       @else {{ str_replace('_', ' ', $category->category_name_en) }}
                       @endif

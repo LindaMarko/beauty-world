@@ -9,7 +9,7 @@ $categories = App\Models\Category::orderBy('category_name_en','ASC')->get();
   <nav class="yamm megamenu-horizontal">
     <ul class="nav">
       @foreach($categories as $category)
-      <li class="dropdown menu-item"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon {{ $category->category_icon }}" aria-hidden="true"></i>
+      <li > <a href="{{url('category/products/'.$category->category_name_en )}}"><i class="icon {{ $category->category_icon }}" aria-hidden="true"></i>
         @if(session()->get('language') == 'swedish') {{ $category->category_name_sv }}
         @else {{ str_replace('_', ' ', $category->category_name_en) }}
         @endif

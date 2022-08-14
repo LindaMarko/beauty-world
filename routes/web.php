@@ -139,3 +139,6 @@ Route::get('/product/details/{id}/{slug}', [IndexController::class, 'ProductDeta
 
 // Frontend Product Tags Page
 Route::get('/product/tag/{tag}', [IndexController::class, 'TagWiseProduct']);
+
+// Frontend Category wise Data
+Route::get('/category/products/{cat_name}', [IndexController::class, 'CatWiseProducts']);
