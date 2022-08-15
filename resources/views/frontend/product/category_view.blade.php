@@ -31,7 +31,7 @@ Category Wise Products
         <div class="sidebar-module-container">
           <div class="sidebar-filter">
             <!-- ============================================== SHOP BY CATEGORY ============================================== -->
-            <div class="sidebar-widget wow fadeInUp">
+            {{-- <div class="sidebar-widget wow fadeInUp">
               <h3 class="section-title">shop by</h3>
               <div class="widget-header">
                 <h4 class="widget-title">Category</h4>
@@ -71,7 +71,7 @@ Category Wise Products
                 <!-- /.accordion -->
               </div>
               <!-- /.sidebar-widget-body -->
-            </div>
+            </div> --}}
             <!-- /.sidebar-widget -->
             <!-- ============================================== SHOP BY CATEGORY : END ============================================== -->
 
@@ -153,8 +153,8 @@ Category Wise Products
           @include('frontend.common.testimonials')
           <!-- ============================================== Testimonials: END ============================================== -->
 
-            <div class="home-banner"> <img src="assets/images/banners/LHS-banner.jpg" alt="Image"> </div>
-          </div>
+            <div class="home-banner"> <img src="{{asset('frontend/assets/images/banners/banner-pd.jpg')}}" alt="Image"> </div>
+          </div><br><br>
           <!-- /.sidebar-filter -->
         </div>
         <!-- /.sidebar-module-container -->

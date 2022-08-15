@@ -18,7 +18,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $products = Product::where('status', 1)->orderBy('id','DESC')->where('price', '!=', '0.0' )->limit(6)->get();
+        $products = Product::where('status', 1)->inRandomOrder()->where('price', '!=', '0.0' )->limit(6)->get();
         $categories = Category::orderBy('category_name_en','ASC')->get();
         $sliders = Slider::where('status',1)->orderBy('id','DESC')->limit(3)->get();
         $featured = Product::where('featured',1)->where('product_type','eyebrow')->where('price', '!=', '0.0' )->limit(6)->get();
@@ -97,7 +97,9 @@ class IndexController extends Controller
     {
 		$product = Product::findOrFail($id);
         $multiImag = MultiImg::where('product_id',$id)->get();
-        return view('frontend.product.product_details',compact('product','multiImag'));
+        $cat_name = $product->product_type;
+		$relatedProducts = Product::where('product_type',strtolower($cat_name))->where('price', '!=', '0.0' )->inRandomOrder()->get();
+        return view('frontend.product.product_details',compact('product','multiImag', 'relatedProducts'));
 
 	}
 
@@ -125,7 +127,7 @@ class IndexController extends Controller
 
     // Category wise data
 	public function CatWiseProducts($cat_name,){
-		$products = Product::where('status',1)->where('product_type',strtolower($cat_name))->where('price', '!=', '0.0' )->orderBy('id','DESC')->paginate(12);
+		$products = Product::where('status',1)->where('product_type',strtolower($cat_name))->where('price', '!=', '0.0' )->orderBy('id','ASC')->paginate(12);
 		$categories = Category::orderBy('category_name_en','ASC')->get();
 		return view('frontend.product.category_view',compact('products','categories'));
 
