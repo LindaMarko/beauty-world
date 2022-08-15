@@ -24,7 +24,7 @@ class IndexController extends Controller
         $featured = Product::where('featured',1)->where('product_type','eyebrow')->where('price', '!=', '0.0' )->limit(6)->get();
         $hot_deals = Product::where('hot_deals',1)->orderBy('price','DESC')->where('price', '!=', '0.0' )->limit(3)->get();
         $special_offer = Product::where('special_offer',1)->orderBy('brand','ASC')->where('price', '!=', '0.0' )->limit(3)->get();
-        $special_deals = Product::where('special_deals',1)->orderBy('id','DESC')->where('price', '!=', '0.0' )->limit(3)->get();
+        $special_deals = Product::where('special_deals',1)->inRandomOrder()->where('price', '!=', '0.0' )->limit(3)->get();
 
         $skip_category_1 = Category::skip(1)->first();
         $skip_product_1 = Product::where('status',1)->where('product_type', strtolower($skip_category_1->category_name_en) )->orderBy('id','DESC')->where('price', '!=', '0.0' )->get();
@@ -126,10 +126,30 @@ class IndexController extends Controller
 	}
 
     // Category wise data
-	public function CatWiseProducts($cat_name,){
+	public function CatWiseProducts($cat_name,)
+    {
 		$products = Product::where('status',1)->where('product_type',strtolower($cat_name))->where('price', '!=', '0.0' )->orderBy('id','ASC')->paginate(12);
 		$categories = Category::orderBy('category_name_en','ASC')->get();
 		return view('frontend.product.category_view',compact('products','categories'));
 
+	}
+
+    /// Product View With Ajax
+	public function ProductViewAjax($id)
+    {
+		$product = Product::findOrFail($id);
+
+		// $color = $product->product_color_en;
+		// $product_color = explode(',', $color);
+
+		// $size = $product->product_size_en;
+		// $product_size = explode(',', $size);
+
+		return response()->json(array(
+			'product' => $product,
+			// 'color' => $product_color,
+			// 'size' => $product_size,
+
+		));
 	}
 }

@@ -284,7 +284,7 @@ Home - Beauty World
                           <div class="action">
                             <ul class="list-unstyled">
                               <li class="add-cart-button btn-group">
-                                <button data-toggle="tooltip" class="btn btn-primary icon" type="button" title="Add Cart"> <i class="fa fa-shopping-cart"></i> </button>
+                                <button class="btn btn-primary icon" type="button" title="Add Cart" data-toggle="modal" data-target="#exampleModal" id="{{ $product->id }}" onclick="productView(this.id)"> <i class="fa fa-shopping-cart"></i></button>
                                 <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
                               </li>
                               <li class="lnk wishlist"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
@@ -359,7 +359,7 @@ Home - Beauty World
                           <div class="action">
                             <ul class="list-unstyled">
                               <li class="add-cart-button btn-group">
-                                <button data-toggle="tooltip" class="btn btn-primary icon" type="button" title="Add Cart"> <i class="fa fa-shopping-cart"></i> </button>
+                                <button class="btn btn-primary icon" type="button" title="Add Cart" data-toggle="modal" data-target="#exampleModal" id="{{ $product->id }}" onclick="productView(this.id)"> <i class="fa fa-shopping-cart"></i></button>
                                 <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
                               </li>
                               <li class="lnk wishlist"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
@@ -414,7 +414,6 @@ Home - Beauty World
         <!-- /.wide-banners -->
 
         <!-- ============================================== WIDE PRODUCTS : END ============================================== -->
-        <!-- ============================================== FEATURED PRODUCTS ============================================== -->
 
         <!-- ============================== ======= skip_category PRODUCTS ============================= ==== -->
 
@@ -469,7 +468,7 @@ Home - Beauty World
                     <div class="action">
                       <ul class="list-unstyled">
                         <li class="add-cart-button btn-group">
-                          <button data-toggle="tooltip" class="btn btn-primary icon" type="button" title="Add Cart"> <i class="fa fa-shopping-cart"></i> </button>
+                          <button class="btn btn-primary icon" type="button" title="Add Cart" data-toggle="modal" data-target="#exampleModal" id="{{ $product->id }}" onclick="productView(this.id)"> <i class="fa fa-shopping-cart"></i></button>
                           <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
                         </li>
                         <li class="lnk wishlist"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
@@ -546,7 +545,7 @@ Home - Beauty World
                     <div class="action">
                       <ul class="list-unstyled">
                         <li class="add-cart-button btn-group">
-                          <button data-toggle="tooltip" class="btn btn-primary icon" type="button" title="Add Cart"> <i class="fa fa-shopping-cart"></i> </button>
+                          <button class="btn btn-primary icon" type="button" title="Add Cart" data-toggle="modal" data-target="#exampleModal" id="{{ $product->id }}" onclick="productView(this.id)"> <i class="fa fa-shopping-cart"></i></button>
                           <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
                         </li>
                         <li class="lnk wishlist"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
@@ -568,8 +567,9 @@ Home - Beauty World
       </section>
       <!-- /.section -->
 
-        <!-- ================================= ==== skip_brand_product PRODUCTS : END ================================== === -->
+      <!-- ================================= ==== skip_brand_product PRODUCTS : END ================================== === -->
 
+        <!-- ============================================== FEATURED PRODUCTS ============================================== -->
         <section class="section featured-product wow fadeInUp">
           <h3 class="section-title">Featured products</h3>
           <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs">
@@ -617,7 +617,7 @@ Home - Beauty World
                     <div class="action">
                       <ul class="list-unstyled">
                         <li class="add-cart-button btn-group">
-                          <button data-toggle="tooltip" class="btn btn-primary icon" type="button" title="Add Cart"> <i class="fa fa-shopping-cart"></i> </button>
+                          <button class="btn btn-primary icon" type="button" title="Add Cart" data-toggle="modal" data-target="#exampleModal" id="{{ $product->id }}" onclick="productView(this.id)"> <i class="fa fa-shopping-cart"></i></button>
                           <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
                         </li>
                         <li class="lnk wishlist"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>

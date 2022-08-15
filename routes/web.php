@@ -142,3 +142,6 @@ Route::get('/product/tag/{tag}', [IndexController::class, 'TagWiseProduct']);
 
 // Frontend Category wise Data
 Route::get('/category/products/{cat_name}', [IndexController::class, 'CatWiseProducts']);
+
+// Product View Modal with Ajax
+Route::get('/product/view/modal/{id}', [IndexController::class, 'ProductViewAjax']);
