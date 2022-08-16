@@ -61,6 +61,8 @@
 <script src="{{asset('frontend/assets/js/wow.min.js')}}"></script>
 <script src="{{asset('frontend/assets/js/scripts.js')}}"></script>
 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 <!-- Add to Cart Product Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -95,10 +97,6 @@
             <label for="size">Choose Size</label>
             <select class="form-control" id="size">
               <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
             </select>
           </div>  <!-- // end form group --> --}}
           <div class="form-group">
@@ -160,6 +158,27 @@
             success:function(data){
               $('#closeModel').click();
                 console.log(data)
+
+                // Start Message
+                const Toast = Swal.mixin({
+                      toast: true,
+                      position: 'top-end',
+                      icon: 'success',
+                      showConfirmButton: false,
+                      timer: 3000
+                    })
+                if ($.isEmptyObject(data.error)) {
+                    Toast.fire({
+                        type: 'success',
+                        title: data.success
+                    })
+                }else{
+                    Toast.fire({
+                        type: 'error',
+                        title: data.error
+                    })
+                }
+                // End Message
             }
         })
     }
