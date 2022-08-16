@@ -244,7 +244,7 @@ Home - Beauty World
                       <div class="product">
                         <div class="product-image">
                           <div class="image">
-                            <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"><img  src="{{ asset($product->image_link)}}" alt=""></a>
+                            <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"><img  src="{{ asset($product->image_link)}}" alt="{{ $product->product_name_en}}" height="200"></a>
                           </div>
                           <!-- /.image -->
                           @php
@@ -322,7 +322,7 @@ Home - Beauty World
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
-                          <div class="image"> <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"><img  src="{{ asset($product->image_link) }}" alt=""></a> </div>
+                          <div class="image"> <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"><img  src="{{ asset($product->image_link) }}" alt="{{ $product->product_name_en}}" height="200"></a> </div>
                           <!-- /.image -->
                           @php
                           $amount = $product->price - $product->discount_price;
@@ -429,7 +429,7 @@ Home - Beauty World
               <div class="products">
                 <div class="product">
                   <div class="product-image">
-                    <div class="image"> <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"><img  src="{{ asset($product->image_link) }}" alt=""></a> </div>
+                    <div class="image"> <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"><img  src="{{ asset($product->image_link) }}" alt="{{ $product->product_name_en}}" width="200" height="200"></a> </div>
                     <!-- /.image -->
 
                     {{-- @php
@@ -489,11 +489,9 @@ Home - Beauty World
         <!-- /.home-owl-carousel -->
       </section>
       <!-- /.section -->
+      <!-- ================================= ==== skip_category PRODUCTS : END ================================== === -->
 
-        <!-- ================================= ==== skip_category PRODUCTS : END ================================== === -->
-
-        <!-- ============================== ======= skip_brand PRODUCTS ============================= ==== -->
-
+      <!-- ============================== ======= skip_brand PRODUCTS ============================= ==== -->
         <section class="section featured-product wow fadeInUp">
           <h3 class="section-title">
             @if(session()->get('language') == 'swedish') {{ $skip_brand_19->brand_name_sv }}
@@ -506,7 +504,7 @@ Home - Beauty World
               <div class="products">
                 <div class="product">
                   <div class="product-image">
-                    <div class="image"> <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"><img  src="{{ asset($product->image_link) }}" alt=""></a> </div>
+                    <div class="image"> <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"><img  src="{{ asset($product->image_link) }}" alt="{{ $product->product_name_en}}" width="200" height="200"></a> </div>
                     <!-- /.image -->
 
                     {{-- @php
@@ -566,7 +564,6 @@ Home - Beauty World
         <!-- /.home-owl-carousel -->
       </section>
       <!-- /.section -->
-
       <!-- ================================= ==== skip_brand_product PRODUCTS : END ================================== === -->
 
         <!-- ============================================== FEATURED PRODUCTS ============================================== -->
@@ -578,7 +575,7 @@ Home - Beauty World
               <div class="products">
                 <div class="product">
                   <div class="product-image">
-                    <div class="image"> <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"><img  src="{{ asset($product->image_link)}}" alt=""></a> </div>
+                    <div class="image"> <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"><img  src="{{ asset($product->image_link)}}" alt="{{ $product->product_name_en}}" width="200" height="200"></a> </div>
                     <!-- /.image -->
                     {{-- @php
                     $amount = $product->price - $product->discount_price;
@@ -1295,7 +1292,7 @@ Home - Beauty World
     </div>
     <!-- /.row -->
     <!-- ============================================== BRANDS CAROUSEL ============================================== -->
-    @include('frontend.body.brand')
+    {{-- @include('frontend.body.brand') --}}
     <!-- /.logo-slider -->
     <!-- ============================================== BRANDS CAROUSEL : END ============================================== -->
   </div>

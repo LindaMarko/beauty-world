@@ -265,7 +265,7 @@ Category Wise Products
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
-                          <div class="image"> <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"><img  src="{{ asset($product->image_link) }}" alt=""></a> </div>
+                          <div class="image"> <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"><img  src="{{ asset($product->image_link) }}"  alt="{{ $product->product_name_en}}"  height="250"></a> </div>
                           <!-- /.image -->
 
                         {{-- @php
@@ -334,7 +334,7 @@ Category Wise Products
                       <div class="row product-list-row">
                         <div class="col col-sm-4 col-lg-4">
                           <div class="product-image">
-                            <div class="image"> <img src="{{ asset($product->image_link) }}" alt=""> </div>
+                            <div class="image"><a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"> <img src="{{ asset($product->image_link) }}" alt="{{ $product->product_name_en}}" height="250"> </div>
                           </div>
                           <!-- /.product-image -->
                         </div>
