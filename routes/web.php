@@ -168,3 +168,7 @@ Route::group(['prefix'=>'user','middleware' => ['user','auth'],'namespace'=>'Use
     Route::get('/cart-increment/{rowId}', [CartPageController::class, 'CartIncrement']);
     Route::get('/cart-decrement/{rowId}', [CartPageController::class, 'CartDecrement']);
 });
+
+
+// Checkout Routes
+ Route::get('/checkout', [CartController::class, 'CheckoutCreate'])->name('checkout');

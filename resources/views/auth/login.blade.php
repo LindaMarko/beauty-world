@@ -104,7 +104,7 @@
 <!-- create a new account -->			</div><!-- /.row -->
 		</div><!-- /.sigin-in-->
 <!-- ============================================== BRANDS CAROUSEL ============================================== -->
-@include('frontend.body.brand')
+{{-- @include('frontend.body.brand') --}}
 <!-- ============================================== BRANDS CAROUSEL : END ============================================== -->	</div><!-- /.container -->
 </div><!-- /.body-content -->
 
