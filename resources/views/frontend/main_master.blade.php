@@ -143,6 +143,7 @@
  // Start Add To Cart Product
  function addToCart(){
         var product_name = $('#pname').text();
+        // var slug = $('#pslug').text();
         var id = $('#product_id').val();
         var price = $('#price').text();
         // var color = $('#color option:selected').text();
@@ -152,7 +153,7 @@
             type: "POST",
             dataType: 'json',
             data:{
-                quantity:quantity, product_name:product_name, price: price
+                quantity:quantity, product_name:product_name, price: price,
             },
             url: "/cart/data/store/"+id,
             success:function(data){
@@ -204,10 +205,10 @@
                     miniCart += `<div class="cart-item product-summary">
                       <div class="row">
                         <div class="col-xs-4">
-                          <div class="image"> <a href="detail.html"><img src="${value.options.image}" alt="${value.name}"></a> </div>
+                          <div class="image"> <a href="/product/details/${value.id}/${value.options.slug}"><img src="${value.options.image}" alt="${value.name}"></a> </div>
                         </div>
                         <div class="col-xs-7">
-                          <h3 class="name"><a href="index.php?page-detail">${value.name}</a></h3>
+                          <h3 class="name"><a href="/product/details/${value.id}/${value.options.slug}">${value.name}</a></h3>
                           <div class="price"> $${value.price} * ${value.qty} </div>
                         </div>
                         <div class="col-xs-1 action">
@@ -272,14 +273,26 @@
           var rows = ""
             $.each(response.carts, function(key,value){
                 rows += `
-                <tr>
-                  <td class="col-md-2"><img src="${value.options.image} " alt="imga"></td>
-                  <td class="col-md-7">
-                    <div class="product-name"><a href="#">${value.name}</a></div>
+                <tr style="text-align: center;">
+                  <td class="col-md-2"><img src="${value.options.image} " alt="${value.name}" style="width:60px; height:60px;"></td>
+                  <td class="col-md-2">
+                    <div class="product-name"><a href="/product/details/${value.id}/${value.options.slug}">${value.name}</a></div>
                       <div class="price"> $${value.price}</div>
                   </td>
+
+                  <td class="col-md-2">
+                    ${value.qty >= 1
+                    ? `<button type="submit" class="btn btn-danger btn-sm" id="${value.rowId}" onclick="cartDecrement(this.id)" >-</button> `
+                    : `<button type="submit" class="btn btn-danger btn-sm" disabled >-</button> `
+                    }
+                    <input type="text" value="${value.qty}" min="1" max="100" disabled="" style="width:25px;" >
+                    <button type="submit" class="btn btn-success btn-sm" id="${value.rowId}" onclick="cartIncrement(this.id)" >+</button>
+                  </td>
+                  <td class="col-md-2">
+                    <strong>$${value.subtotal} </strong>
+                  </td>
                   <td class="col-md-1 close-btn">
-                    <button type="submit" class="" id="${value.id}" onclick="cartRemove(this.id)"><i class="fa fa-times"></i></button>
+                    <button type="submit" class="" id="${value.rowId}" onclick="cartRemove(this.id)"><i class="fa fa-times"></i></button>
                   </td>
                 </tr>`
             });
@@ -325,6 +338,34 @@
      });
  }
 // End My Cart remove
+
+ //  CART Increment
+ function cartIncrement(rowId){
+        $.ajax({
+            type:'GET',
+            url: "/user/cart-increment/"+rowId,
+            dataType:'json',
+            success:function(data){
+                cart();
+                miniCart();
+            }
+        });
+    }
+ //  END CART Increment
+
+ // CART Decrement
+ function cartDecrement(rowId){
+        $.ajax({
+            type:'GET',
+            url: "/user/cart-decrement/"+rowId,
+            dataType:'json',
+            success:function(data){
+                cart();
+                miniCart();
+            }
+        });
+    }
+ // END CART Decrement
 
 </script>
 <!-- //End Load My cart / -->

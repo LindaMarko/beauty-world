@@ -157,10 +157,14 @@ Route::get('/product/mini/cart/', [CartController::class, 'AddMiniCart']);
 // Remove mini cart
 Route::get('/minicart/product-remove/{rowId}', [CartController::class, 'RemoveMiniCart']);
 
+
+// User authenticated routes
 Route::group(['prefix'=>'user','middleware' => ['user','auth'],'namespace'=>'User'], function() {
 
+    // My Cart Page Routes
     Route::get('/mycart', [CartPageController::class, 'MyCart'])->name('mycart');
     Route::get('/get-cart-product', [CartPageController::class, 'GetCartProduct']);
     Route::get('/cart-remove/{rowId}', [CartPageController::class, 'RemoveCartProduct']);
-
+    Route::get('/cart-increment/{rowId}', [CartPageController::class, 'CartIncrement']);
+    Route::get('/cart-decrement/{rowId}', [CartPageController::class, 'CartDecrement']);
 });

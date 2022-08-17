@@ -22,7 +22,7 @@ class CartController extends Controller
     			'price' => $product->price,
     			'options' => [
     				'image' => $product->image_link,
-    				// 'color' => $request->color,
+    				'slug' => $product->product_slug_en,
     			],
     		]);
 
@@ -37,6 +37,7 @@ class CartController extends Controller
     			'price' => $product->discount_price,
     			'options' => [
     				'image' => $product->image_link,
+						'slug' => $product->product_slug_en,
     				// 'color' => $request->color,
     			],
     		]);
