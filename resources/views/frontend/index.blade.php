@@ -273,9 +273,9 @@ Home - Beauty World
                           <div class="rating rateit-small"></div>
                           <div class="description"></div>
                           @if ($product->discount_price == NULL)
-                          <div class="product-price"> <span class="price"> {{ $product->price_sign }}{{ $product->price }} </span></div>
+                          <div class="product-price"> <span class="price"> ${{ $product->price }} </span></div>
                           @else
-                          <div class="product-price"> <span class="price"> {{ $product->price_sign }}{{ $product->discount_price }} </span> <span class="price-before-discount">{{ $product->price_sign }}{{ $product->price }}</span> </div>
+                          <div class="product-price"> <span class="price"> ${{ $product->discount_price }} </span> <span class="price-before-discount">${{ $product->price }}</span> </div>
                           @endif
                           <!-- /.product-price -->
                         </div>
@@ -348,9 +348,9 @@ Home - Beauty World
                           <div class="rating rateit-small"></div>
                           <div class="description"></div>
                           @if ($product->discount_price == NULL)
-                          <div class="product-price"> <span class="price"> {{ $product->price_sign }}{{ $product->price }} </span></div>
+                          <div class="product-price"> <span class="price"> ${{ $product->price }} </span></div>
                           @else
-                          <div class="product-price"> <span class="price"> {{ $product->price_sign }}{{ $product->discount_price }} </span> <span class="price-before-discount">{{ $product->price_sign }}{{ $product->price }}</span> </div>
+                          <div class="product-price"> <span class="price"> ${{ $product->discount_price }} </span> <span class="price-before-discount">${{ $product->price }}</span> </div>
                           @endif
                           <!-- /.product-price -->
                         </div>
@@ -664,7 +664,7 @@ Home - Beauty World
         <!-- ============================================== WIDE PRODUCTS : END ============================================== -->
         <!-- ============================================== BEST SELLER ============================================== -->
 
-        <div class="best-deal wow fadeInUp outer-bottom-xs">
+        {{-- <div class="best-deal wow fadeInUp outer-bottom-xs">
           <h3 class="section-title">Best seller</h3>
           <div class="sidebar-widget-body outer-top-xs">
             <div class="owl-carousel best-seller custom-carousel owl-theme outer-top-xs">
@@ -911,7 +911,7 @@ Home - Beauty World
             </div>
           </div>
           <!-- /.sidebar-widget-body -->
-        </div>
+        </div> --}}
         <!-- /.sidebar-widget -->
         <!-- ============================================== BEST SELLER : END ============================================== -->
 

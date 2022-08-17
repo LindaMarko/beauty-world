@@ -21,13 +21,9 @@
 			<div class='col-md-3 sidebar'>
 				<div class="sidebar-module-container">
 				<div class="home-banner outer-top-n">
-          <img src="{{ asset('frontend/assets/images/banners/banner-pd.jpg') }}" alt="Image">
-        </div>
+          <img src="{{ asset('frontend/assets/images/banners/banner-pd2.jpg') }}" alt="Image">
+        </div><br>
 
-
-<!-- ============================================== HOT DEALS ============================================== -->
-@include('frontend.common.hot_deals')
-<!-- ============================================== HOT DEALS: END ============================================== -->
 <!-- ============================================== NEWSLETTER ============================================== -->
 <div class="sidebar-widget newsletter wow fadeInUp outer-bottom-small outer-top-vs">
 	<h3 class="section-title">Newsletters</h3>
@@ -43,6 +39,9 @@
 	</div><!-- /.sidebar-widget-body -->
 </div><!-- /.sidebar-widget -->
 <!-- ============================================== NEWSLETTER: END ============================================== -->
+<!-- ============================================== HOT DEALS ============================================== -->
+@include('frontend.common.hot_deals')
+<!-- ============================================== HOT DEALS: END ============================================== -->
 <!-- ============================================== Testimonials============================================== -->
 <div class="sidebar-widget  wow fadeInUp outer-top-vs ">
 	<div id="advertisement" class="advertisement">

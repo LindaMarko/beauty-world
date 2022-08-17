@@ -127,12 +127,12 @@
           url: '/product/view/modal/'+id,
           dataType:'json',
           success:function(data){
-            console.log(data)
+            // console.log(data)
             $('#pname').text(data.product.product_name_en);
             $('#price').text(data.product.price);
             $('#pcategory').text(data.product.product_type);
             $('#pbrand').text(data.product.brand);
-            $('#pimage').attr('src','/'+data.product.image_link);
+            $('#pimage').attr('src', data.product.image_link);
             $('#product_id').val(id);
             $('#qty').val(1);
           }
@@ -159,7 +159,7 @@
 
               miniCart()
               $('#closeModel').click();
-                console.log(data)
+                // console.log(data)
 
                 // Start Message
                 const Toast = Swal.mixin({
@@ -195,7 +195,7 @@
          url: '/product/mini/cart',
          dataType:'json',
          success:function(response){
-             console.log(response)
+            //  console.log(response)
 
               $('span[id="cartSubTotal"]').text(response.cartTotal);
               $('#cartQty').text(response.cartQty);
@@ -204,7 +204,7 @@
                     miniCart += `<div class="cart-item product-summary">
                       <div class="row">
                         <div class="col-xs-4">
-                          <div class="image"> <a href="detail.html"><img src="/${value.options.image}" alt=""></a> </div>
+                          <div class="image"> <a href="detail.html"><img src="${value.options.image}" alt="${value.name}"></a> </div>
                         </div>
                         <div class="col-xs-7">
                           <h3 class="name"><a href="index.php?page-detail">${value.name}</a></h3>
