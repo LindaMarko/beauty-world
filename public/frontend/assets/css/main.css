@@ -617,7 +617,7 @@ img[src="assets/images/blank.gif"] {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    border-color: #eee;
+    /* border-color: #eee; */
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -6143,7 +6143,7 @@ header {
     color: #666666;
     font-size: 13px;
     padding-right: 4px;
-    ont-family: FontAwesome;
+    font-family: FontAwesome;
 }
 .blog-page .blog-post .author:before,
 .blog-page
@@ -6336,9 +6336,11 @@ header {
 }
 .checkout-box .checkout-steps .checkout-subtitle {
     font-family: "Open Sans", sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     color: #434343;
     margin-right: 12px;
+    margin-top: 0;
+    text-transform: uppercase;
 }
 .checkout-box .checkout-steps .panel-body {
     padding: 20px;
@@ -6378,7 +6380,7 @@ header {
 }
 .checkout-box .checkout-progress-sidebar .panel .panel-heading h4 {
     margin: 0px;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: bold;
     background: #fff;
     border-bottom: 1px #e5e5e5 solid;

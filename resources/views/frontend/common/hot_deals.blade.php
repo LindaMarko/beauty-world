@@ -10,14 +10,17 @@
     <div class="item">
       <div class="products">
         <div class="hot-deal-wrapper">
-          <div class="image"> <img src="{{ asset($product->image_link) }}" alt=""> </div>
+          <div class="tag hot"><span>Hot</span></div>
+          <div class="image">
+            <img src="{{ asset($product->image_link) }}" alt="{{ $product->product_name_en }}" style="width: 150px;">
+          </div>
 
           {{-- @php
           $amount = $product->price - $product->discount_price;
           $discount = ($amount/$product->price) * 100;
           @endphp --}}
 
-          <div class="timing-wrapper">
+          {{-- <div class="timing-wrapper">
             <div class="box-wrapper">
               <div class="date box"> <span class="key">120</span> <span class="value">DAYS</span> </div>
             </div>
@@ -30,7 +33,7 @@
             <div class="box-wrapper hidden-md">
               <div class="seconds box"> <span class="key">60</span> <span class="value">SEC</span> </div>
             </div>
-          </div>
+          </div> --}}
           </div>
           <!-- /.hot-deal-wrapper -->
           <div class="product-info text-left m-t-20">
@@ -41,6 +44,7 @@
               @endif
               </a>
             </h3>
+
             <div class="rating rateit-small"></div>
              @if ($product->discount_price == NULL)
               <div class="product-price"> <span class="price"> ${{ $product->price }} </span>  </div>

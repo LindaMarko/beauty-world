@@ -30,6 +30,7 @@
 <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700,700italic,800' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
 </head>
 <body class="cnt-home">
 <!-- ============================================== HEADER ============================================== -->
@@ -61,6 +62,7 @@
 <script src="{{asset('frontend/assets/js/wow.min.js')}}"></script>
 <script src="{{asset('frontend/assets/js/scripts.js')}}"></script>
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <!-- Add to Cart Product Modal -->

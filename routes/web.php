@@ -172,3 +172,4 @@ Route::group(['prefix'=>'user','middleware' => ['user','auth'],'namespace'=>'Use
 
 // Checkout Routes
  Route::get('/checkout', [CartController::class, 'CheckoutCreate'])->name('checkout');
+ Route::post('/checkout/store', [CheckoutController::class, 'CheckoutStore'])->name('checkout.store');
