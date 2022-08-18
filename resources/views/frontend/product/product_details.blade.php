@@ -9,8 +9,8 @@
 		<div class="breadcrumb-inner">
 			<ul class="list-inline list-unstyled">
 				<li><a href="#">Home</a></li>
-				<li><a href="#">Clotsvg</a></li>
-				<li class='active'>Floral Print Buttoned</li>
+				<li>{{strtoupper( $cat_name)}}</li>
+				<li class='active'>{{ $product->product_name_en }}</li>
 			</ul>
 		</div><!-- /.breadcrumb-inner -->
 	</div><!-- /.container -->

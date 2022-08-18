@@ -99,13 +99,12 @@ class IndexController extends Controller
         $multiImag = MultiImg::where('product_id',$id)->get();
         $cat_name = $product->product_type;
 		$relatedProducts = Product::where('product_type',strtolower($cat_name))->where('price', '!=', '0.0' )->inRandomOrder()->get();
-        return view('frontend.product.product_details',compact('product','multiImag', 'relatedProducts'));
+        return view('frontend.product.product_details',compact('product','multiImag','relatedProducts', 'cat_name'));
 
 	}
 
     public function TagWiseProduct($tag)
     {
-
         $productsWithTags = Product::whereNotNull('product_tags_en')->where('price', '!=', '0.0' )->get();
         $productsWithClickedTag = array();
         foreach( $productsWithTags as $product) {
@@ -121,16 +120,17 @@ class IndexController extends Controller
 
 		// $products = Product::where('status',1)->where('product_tags_en',$tag)->where('product_tags_sv',$tag)->orderBy('id','DESC')->get();
         $categories = Category::orderBy('category_name_en','ASC')->get();
-		return view('frontend.tags.tags_view',compact('productsWithClickedTag','categories'));
+		return view('frontend.tags.tags_view',compact('productsWithClickedTag','categories', 'tag'));
 
 	}
 
     // Category wise data
-	public function CatWiseProducts($cat_name,)
+	public function CatWiseProducts($cat_name)
     {
 		$products = Product::where('status',1)->where('product_type',strtolower($cat_name))->where('price', '!=', '0.0' )->orderBy('id','ASC')->paginate(12);
 		$categories = Category::orderBy('category_name_en','ASC')->get();
-		return view('frontend.product.category_view',compact('products','categories'));
+        $breadcrumbcat = Category::where('category_name_en',$cat_name)->get();
+		return view('frontend.product.category_view',compact('products','categories', 'breadcrumbcat'));
 
 	}
 
@@ -153,8 +153,8 @@ class IndexController extends Controller
     {
 		$item = $request->search;
         $categories = Category::orderBy('product_type','ASC')->get();
-		$products = Product::where('product_name_en','LIKE',"%$item%")->where('price', '!=', '0.0')->paginate(12);
-		return view('frontend.product.search',compact('products','categories'));
+		$products = Product::where('product_name_en','LIKE',"%$item%")->where('price', '!=', '0.0')->get();
+		return view('frontend.product.search',compact('products','categories', 'item'));
 
 
 	}

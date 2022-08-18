@@ -3,22 +3,7 @@
 @section('title')
 Tag Wise Products
 @endsection
-@php
-// dd($productsWithClickedTag);
-@endphp
-<div class="breadcrumb">
-  <div class="container">
-    <div class="breadcrumb-inner">
-      <ul class="list-inline list-unstyled">
-        <li><a href="#">Home</a></li>
-        <li class='active'>Handbags</li>
-      </ul>
-    </div>
-    <!-- /.breadcrumb-inner -->
-  </div>
-  <!-- /.container -->
-</div>
-<!-- /.breadcrumb -->
+
 <div class="body-content outer-top-xs">
   <div class='container'>
     <div class='row'>
@@ -177,7 +162,7 @@ Tag Wise Products
             <!-- /.container-fluid -->
           </div>
         </div>
-
+        <h4><span class="badge badge-danger" style="background: #8c54a1;">{{ count($productsWithClickedTag) }}</span> product(s) with the tag "{{$tag}}"</h4>
         <!-- ========================================== FILTER OPTIONS ========================================= -->
         <div class="clearfix filters-container m-t-10">
           <div class="row">
@@ -267,7 +252,7 @@ Tag Wise Products
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
-                          <div class="image"> <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"><img  src="{{ asset($product->image_link) }}" alt=""></a> </div>
+                          <div class="image"> <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"><img  src="{{ asset($product->image_link) }}" alt="{{ $product->product_name_en}}"  height="250"></a> </div>
                           <!-- /.image -->
 
                         {{-- @php
@@ -336,7 +321,8 @@ Tag Wise Products
                       <div class="row product-list-row">
                         <div class="col col-sm-4 col-lg-4">
                           <div class="product-image">
-                            <div class="image"> <img src="{{ asset($product->image_link) }}" alt=""> </div>
+                            <div class="image"> <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"><img  src="{{ asset($product->image_link) }}" alt="{{ $product->product_name_en}}"  height="250"></a> </div>
+                          <!-- /.image -->
                           </div>
                           <!-- /.product-image -->
                         </div>
