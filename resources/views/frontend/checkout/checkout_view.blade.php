@@ -21,7 +21,7 @@ My Checkout
 	<div class="container">
 		<div class="checkout-box ">
 			<div class="row">
-				<div class="col-md-8">
+				<div class="col-md-8" style="margin-bottom: 100px;">
 					<div class="panel-group checkout-steps" id="accordion">
 						<!-- checkout-step-01  -->
             <div class="panel panel-default checkout-step-01">
@@ -149,11 +149,16 @@ My Checkout
         </form>
       </div><!-- /.row -->
     </div><!-- /.checkout-box -->
-		<!-- === ===== BRANDS CAROUSEL ==== ======== -->
 
-<!-- ===== == BRANDS CAROUSEL : END === === -->
+    <!-- ============================================== INFO BOXES ============================================== -->
+    @include('frontend.common.info_boxes')
+    <!-- ============================================== INFO BOXES : END ============================================== -->
+		<!-- ============================================== FEATURED PRODUCTS ============================================== -->
+    @include('frontend.common.featured_products')
+    <!-- ============================================== FEATURED PRODUCTS : END ============================================== -->
 </div><!-- /.container -->
 </div><!-- /.body-content -->
+
 
 
 @endsection

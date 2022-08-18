@@ -1,5 +1,5 @@
 @php
-  $hot_deals = App\Models\Product::where('hot_deals',1)->orderBy('price','DESC')->where('price', '!=', '0.0' )->limit(3)->get();
+  $hot_deals = App\Models\Product::where('hot_deals',1)->orderBy('price','ASC')->where('price', '!=', '0.0' )->limit(6)->get();
 @endphp
 
 
@@ -12,7 +12,7 @@
         <div class="hot-deal-wrapper">
           <div class="tag hot"><span>Hot</span></div>
           <div class="image">
-            <img src="{{ asset($product->image_link) }}" alt="{{ $product->product_name_en }}" style="width: 150px;">
+            <img src="{{ asset($product->image_link) }}" alt="{{ $product->product_name_en }}" style="width: 180px;">
           </div>
 
           {{-- @php
