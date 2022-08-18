@@ -33,7 +33,7 @@ My Checkout
 
                     <div class="col-md-6 col-sm-6">
                       <h1 class="checkout-subtitle"><b>Shipping Address</b></h1><br>
-                      <form class="register-form" action="{{ route('checkout.store') }}" method="POST">
+                      <form class="register-form" action="" method="">
                         @csrf
                         <div class="form-group">
                           <label class="info-title" for="name"><b>Name</b> <span>*</span></label>
@@ -67,7 +67,7 @@ My Checkout
                           <input type="text" name="country" class="form-control unicase-form-control text-input" id="country" placeholder="country" required="">
                         </div>  <!-- // end form group  -->
                         <div class="form-group">
-                          <label class="info-title" for="notes"><b>Notes</b> <span>*</span></label>
+                          <label class="info-title" for="notes"><b>Notes</b></label>
                           <textarea class="form-control" cols="30" rows="5" placeholder="Notes" name="notes"></textarea>
                         </div>  <!-- // end form group  -->
                     </div>
@@ -122,7 +122,7 @@ My Checkout
                 <div class="panel-heading">
                     <h4 class="unicase-checkout-title">Select Payment Method</h4>
                 </div>
-                <div class="row">
+                <div class="row" style="padding: 15px;">
                   <div class="col-md-4">
                     <label for="">Stripe</label>
                     <input type="radio" name="payment_method" value="stripe">
@@ -141,7 +141,7 @@ My Checkout
                       <img src="{{ asset('frontend/assets/images/payments/2.png') }}">
                   </div> <!-- end col md 4 -->
 
-                  <button type="submit" class="btn-upper btn btn-primary checkout-page-button" style="margin-top: 50px;">Payment Step</button>
+                  <button type="button" class="btn-upper btn btn-primary checkout-page-button pull-right" style="margin-top: 50px;">Proceed to Payment</button>
                 </div>
               </div>
             </div>

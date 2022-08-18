@@ -38,11 +38,9 @@ My Cart Page
           </div>
         </div>
 
-        <div class="col-md-4 col-sm-12 cart-shopping-total" style="width: 100%;">
-          <div class="cart-checkout-btn pull-right">
-            <a href="{{ route('checkout') }}" type="submit" class="btn btn-primary checkout-btn">PROCEED TO CHECKOUT</a>
-          </div>
-        </div><!-- /.cart-shopping-total -->
+        <div class="cart-checkout-btn pull-right">
+          <a href="{{ route('checkout') }}" type="submit" class="btn btn-primary checkout-btn">PROCEED TO CHECKOUT</a>
+        </div>
       </div><!-- /.row -->
 		</div><!-- /.sigin-in-->
 

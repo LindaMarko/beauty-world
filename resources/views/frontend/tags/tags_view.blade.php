@@ -162,7 +162,7 @@ Tag Wise Products
             <!-- /.container-fluid -->
           </div>
         </div>
-        <h4><span class="badge badge-danger" style="background: #8c54a1;">{{ count($productsWithClickedTag) }}</span> product(s) with the tag "{{$tag}}"</h4>
+        <h4><span class="badge badge-danger" style="background: #4ecac5;">{{ count($productsWithClickedTag) }}</span> product(s) with the tag "{{$tag}}"</h4>
         <!-- ========================================== FILTER OPTIONS ========================================= -->
         <div class="clearfix filters-container m-t-10">
           <div class="row">

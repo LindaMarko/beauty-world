@@ -131,7 +131,7 @@ Category Wise Products
             <!-- /.container-fluid -->
           </div>
         </div>
-        <h4><b>Total Search with "{{$item}}" : </b><span class="badge badge-danger" style="background: #8c54a1;">{{ count($products) }}</span> product(s)</h4>
+        <h4><b>Total Search with "{{$item}}" : </b><span class="badge badge-danger" style="background: #4ecac5;">{{ count($products) }}</span> product(s)</h4>
 
         <!-- ========================================== FILTER OPTIONS ========================================= -->
         <div class="clearfix filters-container m-t-10">

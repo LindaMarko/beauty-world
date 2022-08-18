@@ -75,21 +75,11 @@
           <div class="search-area">
             <form method="POST" action="{{ route('product.search') }}">
               @csrf
-              <div class="control-group">
-                {{-- <ul class="categories-filter animate-dropdown">
-                  <li class="dropdown"> <a class="dropdown-toggle"  data-toggle="dropdown" href="category.html">Categories <b class="caret"></b></a>
-                    <ul class="dropdown-menu" role="menu" >
-                      <li class="menu-header">Computer</li>
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Clothing</a></li>
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Electronics</a></li>
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Shoes</a></li>
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Watches</a></li>
-                    </ul>
-                  </li>
-                </ul> --}}
-                <input class="search-field" name="search" placeholder="Search here..." />
-                <button  type="submit" class="search-button" href="" ></button> </div>
+
+              <input class="search-field" name="search" id="search" placeholder="Search here..." />
+              <button  type="submit" class="search-button"></button>
             </form>
+            <div id="searchProducts"></div>
           </div>
           <!-- /.search-area -->
           <!-- ============================================================= SEARCH AREA : END ============================================================= --> </div>
@@ -171,7 +161,7 @@
                       @else {{ str_replace('_', ' ', $category->category_name_en) }}
                       @endif
                     </a>
-                    {{-- <ul class="dropdown-menu container">
+              {{-- <ul class="dropdown-menu container">
                       <li>
                         <div class="yamm-content ">
                           <div class="row"> --}}
@@ -230,3 +220,31 @@
   <!-- ============================================== NAVBAR : END ============================================== -->
 
 </header>
+
+<style>
+
+  .search-area{
+    position: relative;
+  }
+  #searchProducts {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    z-index: 999;
+    border-radius: 8px;
+    margin-top: 5px;
+  }
+</style>
+
+
+<script>
+  function search_result_hide(){
+    $("#searchProducts").slideUp();
+  }
+    function search_result_show(){
+      $("#searchProducts").slideDown();
+  }
+
+</script>

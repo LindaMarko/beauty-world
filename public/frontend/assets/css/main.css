@@ -1575,7 +1575,7 @@ header {
     -moz-border-radius: 5px 0 0 5px;
     border-radius: 5px 0 0 5px;
     padding: 13px;
-    width: 67%;
+    width: 90%;
 }
 .main-header .top-search-holder .search-area .categories-filter {
     border-right: 1px solid #e0e0e0;
@@ -4012,6 +4012,9 @@ header {
 }
 .footer .contact-information .media .media-body a {
     color: #666666;
+}
+.footer {
+    margin-top: 150px;
 }
 .footer .footer-bottom {
     background: #202020;
@@ -6495,7 +6498,7 @@ header {
 .shopping-cart {
     background-color: #fff;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
-    padding: 20px;
+    padding: 60px;
     overflow: hidden;
 }
 
