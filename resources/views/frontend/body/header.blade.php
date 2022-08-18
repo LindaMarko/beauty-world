@@ -73,9 +73,10 @@
           <!-- /.contact-row -->
           <!-- ============================================================= SEARCH AREA ============================================================= -->
           <div class="search-area">
-            <form>
+            <form method="POST" action="{{ route('product.search') }}">
+              @csrf
               <div class="control-group">
-                <ul class="categories-filter animate-dropdown">
+                {{-- <ul class="categories-filter animate-dropdown">
                   <li class="dropdown"> <a class="dropdown-toggle"  data-toggle="dropdown" href="category.html">Categories <b class="caret"></b></a>
                     <ul class="dropdown-menu" role="menu" >
                       <li class="menu-header">Computer</li>
@@ -85,9 +86,9 @@
                       <li role="presentation"><a role="menuitem" tabindex="-1" href="category.html">- Watches</a></li>
                     </ul>
                   </li>
-                </ul>
-                <input class="search-field" placeholder="Search here..." />
-                <a class="search-button" href="#" ></a> </div>
+                </ul> --}}
+                <input class="search-field" name="search" placeholder="Search here..." />
+                <button  type="submit" class="search-button" href="" ></button> </div>
             </form>
           </div>
           <!-- /.search-area -->
@@ -133,10 +134,8 @@
         <!-- /.top-cart-row -->
       </div>
       <!-- /.row -->
-
     </div>
     <!-- /.container -->
-
   </div>
   <!-- /.main-header -->
 

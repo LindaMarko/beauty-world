@@ -134,7 +134,7 @@ class IndexController extends Controller
 
 	}
 
-    /// Product View With Ajax
+    /// Product Modal View With Ajax
 	public function ProductViewAjax($id)
     {
 		$product = Product::findOrFail($id);
@@ -142,14 +142,21 @@ class IndexController extends Controller
 		// $color = $product->product_color_en;
 		// $product_color = explode(',', $color);
 
-		// $size = $product->product_size_en;
-		// $product_size = explode(',', $size);
-
 		return response()->json(array(
 			'product' => $product,
 			// 'color' => $product_color,
-			// 'size' => $product_size,
-
 		));
 	}
+
+    // Product Seach
+	public function ProductSearch(Request $request)
+    {
+		$item = $request->search;
+        $categories = Category::orderBy('product_type','ASC')->get();
+		$products = Product::where('product_name_en','LIKE',"%$item%")->where('price', '!=', '0.0')->paginate(12);
+		return view('frontend.product.search',compact('products','categories'));
+
+
+	}
+
 }

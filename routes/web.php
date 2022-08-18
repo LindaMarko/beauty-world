@@ -145,7 +145,7 @@ Route::get('/product/tag/{tag}', [IndexController::class, 'TagWiseProduct']);
 // Frontend Category wise Data
 Route::get('/category/products/{cat_name}', [IndexController::class, 'CatWiseProducts']);
 
-// Product View Modal with Ajax
+// Product Modal View  with Ajax
 Route::get('/product/view/modal/{id}', [IndexController::class, 'ProductViewAjax']);
 
 // Add to Cart Store Data
@@ -169,7 +169,9 @@ Route::group(['prefix'=>'user','middleware' => ['user','auth'],'namespace'=>'Use
     Route::get('/cart-decrement/{rowId}', [CartPageController::class, 'CartDecrement']);
 });
 
-
 // Checkout Routes
  Route::get('/checkout', [CartController::class, 'CheckoutCreate'])->name('checkout');
  Route::post('/checkout/store', [CheckoutController::class, 'CheckoutStore'])->name('checkout.store');
+
+// Product Search Route
+Route::post('/search', [IndexController::class, 'ProductSearch'])->name('product.search');
