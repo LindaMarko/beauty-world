@@ -4,8 +4,6 @@
 Category Wise Products
 @endsection
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 <div class="breadcrumb">
   <div class="container">
     <div class="breadcrumb-inner">
@@ -234,12 +232,13 @@ Category Wise Products
           <!-- /.filters-container -->
         </div>
         <!-- /.search-result-container -->
+        <div class="ajax-loadmore-product text-center" style="display: none;">
+          <img src="{{ asset('frontend/assets/images/loader.svg') }}" style="width: 56px; height: 56px;">
+        </div>
       </div>
       <!-- /.col -->
 
-      <div class="ajax-loadmore-product text-center" style="display: none;">
-        <img src="{{ asset('frontend/assets/images/loader.svg') }}" style="width: 56px; height: 56px;">
-      </div>
+
 
     </div>
     <!-- /.row -->
@@ -251,10 +250,12 @@ Category Wise Products
 </div>
 <!-- /.body-content -->
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
   function loadmoreProduct(page){
     $.ajax({
       type: "get",
+      datatype: "json",
       url: "?page="+page,
       beforeSend: function(response){
         $('.ajax-loadmore-product').show();
@@ -278,6 +279,7 @@ Category Wise Products
     if ($(window).scrollTop() +$(window).height() >= $(document).height()){
       page ++;
       loadmoreProduct(page);
+
     }
   });
 </script>
