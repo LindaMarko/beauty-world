@@ -347,28 +347,31 @@ Home - Beauty World
         </div>
         <!-- /.scroll-tabs -->
         <!-- ============================================== SCROLL TABS : END ============================================== -->
-        <!-- ============================================== WIDE PRODUCTS ============================================== -->
-        <div class="wide-banners wow fadeInUp outer-bottom-xs">
+         <!-- ============================================== WIDE PRODUCTS ============================================== -->
+         <div class="wide-banners wow fadeInUp outer-bottom-xs">
           <div class="row">
-            <div class="col-md-7 col-sm-7">
+            <div class="col-md-12">
               <div class="wide-banner cnt-strip">
-                <div class="image"> <img class="img-responsive" src="{{asset('frontend/assets/images/banners/home-banner1.jpg')}}" alt=""> </div>
+                <div class="image"> <img class="img-responsive" src="{{asset('frontend/assets/images/banners/home-banner.jpg')}}" alt=""> </div>
+                <div class="strip strip-text">
+                  <div class="strip-inner">
+                    <h2 class="text-right">New Palettes<br>
+                      <span class="shopping-needs">Save up to 40% off</span></h2>
+                  </div>
+                </div>
+                <div class="new-label">
+                  <div class="text">NEW</div>
+                </div>
+                <!-- /.new-label -->
               </div>
               <!-- /.wide-banner -->
             </div>
             <!-- /.col -->
-            <div class="col-md-5 col-sm-5">
-              <div class="wide-banner cnt-strip">
-                <div class="image"> <img class="img-responsive" src="{{asset('frontend/assets/images/banners/home-banner2.jpg')}}" alt=""> </div>
-              </div>
-              <!-- /.wide-banner -->
-            </div>
-            <!-- /.col -->
+
           </div>
           <!-- /.row -->
         </div>
         <!-- /.wide-banners -->
-
         <!-- ============================================== WIDE PRODUCTS : END ============================================== -->
 
         <!-- ============================== ======= skip_category PRODUCTS ============================= ==== -->
@@ -663,6 +666,33 @@ Home - Beauty World
         <!-- /.section -->
         <!-- ============================================== BLOG SLIDER : END ============================================== -->
 
+         <!-- ============================================== WIDE PRODUCTS ============================================== -->
+         <div class="wide-banners wow fadeInUp outer-bottom-xs">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="wide-banner cnt-strip">
+                <div class="image"> <img class="img-responsive" src="{{asset('frontend/assets/images/banners/home-banner.jpg')}}" alt=""> </div>
+                <div class="strip strip-text">
+                  <div class="strip-inner">
+                    <h2 class="text-right">New Palettes<br>
+                      <span class="shopping-needs">Save up to 40% off</span></h2>
+                  </div>
+                </div>
+                <div class="new-label">
+                  <div class="text">NEW</div>
+                </div>
+                <!-- /.new-label -->
+              </div>
+              <!-- /.wide-banner -->
+            </div>
+            <!-- /.col -->
+
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.wide-banners -->
+        <!-- ============================================== WIDE PRODUCTS : END ============================================== -->
+
         <!-- ============================================== FEATURED PRODUCTS ============================================== -->
         {{-- <section class="section wow fadeInUp new-arriavls">
           <h3 class="section-title">New Arrivals</h3>
@@ -929,10 +959,7 @@ Home - Beauty World
       <!-- ============================================== CONTENT : END ============================================== -->
     </div>
     <!-- /.row -->
-    <!-- ============================================== BRANDS CAROUSEL ============================================== -->
-    {{-- @include('frontend.body.brand') --}}
-    <!-- /.logo-slider -->
-    <!-- ============================================== BRANDS CAROUSEL : END ============================================== -->
+
   </div>
   <!-- /.container -->
 </div>

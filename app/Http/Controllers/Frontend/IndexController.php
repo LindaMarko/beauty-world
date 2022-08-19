@@ -125,11 +125,21 @@ class IndexController extends Controller
 	}
 
     // Category wise data
-	public function CatWiseProducts($cat_name)
+	public function CatWiseProducts(Request $request, $cat_name)
     {
 		$products = Product::where('status',1)->where('product_type',strtolower($cat_name))->where('price', '!=', '0.0' )->orderBy('id','ASC')->paginate(12);
 		$categories = Category::orderBy('category_name_en','ASC')->get();
         $breadcrumbcat = Category::where('category_name_en',$cat_name)->get();
+
+        ///  Load More Product with Ajax
+		if ($request->ajax()) {
+            $grid_view = view('frontend.product.grid_view_product',compact('products'))->render();
+            $list_view = view('frontend.product.list_view_product',compact('products'))->render();
+
+            return response()->json(['grid_view' => $grid_view,'list_view',$list_view]);
+        }
+        ///  End Load More Product with Ajax
+
 		return view('frontend.product.category_view',compact('products','categories', 'breadcrumbcat'));
 
 	}
