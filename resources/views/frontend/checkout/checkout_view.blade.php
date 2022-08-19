@@ -21,7 +21,7 @@ My Checkout
 	<div class="container">
 		<div class="checkout-box ">
 			<div class="row">
-				<div class="col-md-8" style="margin-bottom: 100px;">
+				<div class="col-md-8" style="margin-bottom: 10px;">
 					<div class="panel-group checkout-steps" id="accordion">
 						<!-- checkout-step-01  -->
             <div class="panel panel-default checkout-step-01">
@@ -71,7 +71,6 @@ My Checkout
                           <textarea class="form-control" cols="30" rows="5" placeholder="Notes" name="notes"></textarea>
                         </div>  <!-- // end form group  -->
                     </div>
-
                   </div>
                 </div>
                 <!-- panel-body  -->
@@ -115,7 +114,7 @@ My Checkout
 
         </div><!-- /.col-md-4 -->
 
-        <div class="col-md-4">
+        <div class="col-md-8" style="margin-bottom: 120px;">
           <div class="checkout-progress-sidebar ">
             <div class="panel-group">
               <div class="panel panel-default">

@@ -4278,7 +4278,9 @@ header {
     display: table-cell;
 }
 .category-carousel .item .caption .big-text {
-    font-size: 100px;
+    font-size: 60px;
+    font-weight: bold;
+    letter-spacing: .1rem;
     line-height: 145px;
     text-transform: uppercase;
     font-family: "Open Sans", sans-serif;
@@ -4445,7 +4447,7 @@ header {
 .search-result-container .category-product {
 }
 .search-result-container .category-product .product {
-    margin-bottom: 30px;
+    margin-bottom: 80px;
 }
 .search-result-container .category-product .product .product-image .tag {
     width: 35px;

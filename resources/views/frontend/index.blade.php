@@ -155,9 +155,9 @@ Home - Beauty World
               <div class="item" style="background-image: url({{ asset($slider->slider_img) }});">
                 <div class="container-fluid">
                   <div class="caption bg-color vertical-center text-left">
-                    <div class="big-text fadeInDown-1">{{ $slider->title }} </div>
-                    <div class="excerpt fadeInDown-2 hidden-xs"> <span>{{ $slider->description }}</span> </div>
-                    <div class="button-holder fadeInDown-3" style="margin: 70px 0 0;"> <a  class="btn-lg btn btn-uppercase btn-primary shop-now-button">Shop Now</a> </div>
+                    <div class="big-text fadeInDown-1" style="color: white; margin-top: 120px;">{{ $slider->title }} </div>
+                    <div class="excerpt fadeInDown-2 hidden-xs" style="color: #e8bbfa; font-size: 20px; font-style: italic;"> <span>{{ $slider->description }}</span> </div>
+                    <div class="button-holder fadeInDown-3" style="margin: 10px 0 0;"> <a  class="btn-lg btn btn-uppercase btn-primary shop-now-button">Shop Now</a> </div>
                   </div>
                   <!-- /.caption -->
                 </div>
