@@ -21,6 +21,7 @@ class CartController extends Controller
     			'name' => $request->product_name,
     			'qty' => $request->quantity,
     			'price' => $product->price,
+					'weight' => 1,
     			'options' => [
     				'image' => $product->image_link,
     				'slug' => $product->product_slug_en,
@@ -36,6 +37,7 @@ class CartController extends Controller
     			'name' => $request->product_name,
     			'qty' => $request->quantity,
     			'price' => $product->discount_price,
+					'weight' => 1,
     			'options' => [
     				'image' => $product->image_link,
 						'slug' => $product->product_slug_en,
