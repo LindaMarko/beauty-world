@@ -62,13 +62,18 @@ class DatabaseSeeder extends Seeder
             [
                 'slider_img'=>'upload/slider/1741524002816306.jpg',
                 'title'=>'Colorful Makeup',
+                'description'=>'Do you dare?',
             ],
             [
                 'slider_img'=>'upload/slider/1741524605656482.jpg',
                 'title'=>'Feel Good',
                 'description'=>'Cool and Functional',
             ],
-            ['slider_img'=>'upload/slider/1741524457825875.jpg'],
+            [
+                'slider_img'=>'upload/slider/1741524457825875.jpg',
+                'title'=>'',
+                'description'=>'',
+             ],
 
         ];
 
