@@ -136,14 +136,17 @@ Route::prefix('slider')->group(function(){
 Route::get('/language/swedish', [LanguageController::class, 'Swedish'])->name('swedish.language');
 Route::get('/language/english', [LanguageController::class, 'English'])->name('english.language');
 
-// Frontend Product Details Page url
+// Product Details Page url
 Route::get('/product/details/{id}/{slug}', [IndexController::class, 'ProductDetails']);
 
-// Frontend Product Tags Page
+// Product Tags Page
 Route::get('/product/tag/{tag}', [IndexController::class, 'TagWiseProduct']);
 
-// Frontend Category wise Data
+// Category wise Data
 Route::get('/category/products/{cat_name}', [IndexController::class, 'CatWiseProducts']);
+
+// Brand wise Data
+Route::get('/category/products/brand/{brand_name}', [IndexController::class, 'BrandWiseProducts']);
 
 // Product Modal View  with Ajax
 Route::get('/product/view/modal/{id}', [IndexController::class, 'ProductViewAjax']);

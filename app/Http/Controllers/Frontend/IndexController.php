@@ -18,7 +18,29 @@ class IndexController extends Controller
 {
     public function index()
     {
+
         $products = Product::where('status', 1)->inRandomOrder()->where('price', '!=', '0.0' )->limit(6)->get();
+        // $goodProducts = array();
+        // function get_http_response_code($url) {
+        //         $statusCode = '';
+        //         if(filter_var($url, FILTER_VALIDATE_URL)){
+        //             $headers = get_headers($url);
+        //             $statusCode = substr($headers[0], 9, 3);
+
+        //         }
+        //         return $statusCode;
+
+        //     }
+        // foreach($products as $product) {
+        //     $response = get_http_response_code($product->image_link);
+
+        //     if($response <= 200){
+        //         array_push($goodProducts, $product);
+        //     }
+        //     print_r($goodProducts);
+        // }
+
+
         $categories = Category::orderBy('category_name_en','ASC')->get();
         $sliders = Slider::where('status',1)->orderBy('id','DESC')->limit(3)->get();
         // $featured = Product::where('featured',1)->where('product_type','eyebrow')->where('price', '!=', '0.0' )->limit(6)->get();
@@ -141,6 +163,26 @@ class IndexController extends Controller
         ///  End Load More Product with Ajax
 
 		return view('frontend.product.category_view',compact('products','categories', 'breadcrumbcat'));
+
+	}
+
+    // Brand wise data
+	public function BrandWiseProducts(Request $request, $brand_name)
+    {
+		$products = Product::where('status',1)->where('brand',strtolower($brand_name))->where('price', '!=', '0.0' )->orderBy('id','ASC')->paginate(18);
+		$categories = Category::orderBy('category_name_en','ASC')->get();
+        $breadcrumbcat = Brand::where('brand_name_en', ucfirst($brand_name))->get();
+
+        ///  Load More Product with Ajax
+		if ($request->ajax()) {
+            $grid_view = view('frontend.product.grid_view_product',compact('products'))->render();
+            $list_view = view('frontend.product.list_view_product',compact('products'))->render();
+
+            return response()->json(['grid_view' => $grid_view,'list_view'=> $list_view]);
+        }
+        ///  End Load More Product with Ajax
+
+		return view('frontend.product.brand_view',compact('products','categories', 'breadcrumbcat'));
 
 	}
 
