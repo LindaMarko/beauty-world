@@ -4447,6 +4447,7 @@ header {
 .search-result-container .category-product {
 }
 .search-result-container .category-product .product {
+    margin-top: 50px;
     margin-bottom: 80px;
 }
 .search-result-container .category-product .product .product-image .tag {
@@ -5671,9 +5672,10 @@ header {
         margin-bottom: 10px;
     }
     .product .product-image .image img {
-        width: 100%;
-        height: auto;
+        width: 250px;
+        height: 250px;
         display: block;
+        margin: 0 auto;
     }
     .header-nav .yamm .dropdown-menu {
         background: #fff;

@@ -347,21 +347,21 @@ Home - Beauty World
         </div>
         <!-- /.scroll-tabs -->
         <!-- ============================================== SCROLL TABS : END ============================================== -->
-         <!-- ============================================== WIDE PRODUCTS ============================================== -->
+         <!-- ============================================== WIDE PRODUCTS 1 ============================================== -->
          <div class="wide-banners wow fadeInUp outer-bottom-xs">
           <div class="row">
             <div class="col-md-12">
               <div class="wide-banner cnt-strip">
-                <div class="image"> <img class="img-responsive" src="{{asset('frontend/assets/images/banners/home-banner.jpg')}}" alt=""> </div>
+                <div class="image"> <a href="{{url('/category/products/brand/maybelline')}}"><img class="img-responsive" src="{{asset('frontend/assets/images/banners/home-banner2.jpg')}}" alt=""></a> </div>
                 <div class="strip strip-text">
                   <div class="strip-inner">
-                    <h2 class="text-right">New Palettes<br>
-                      <span class="shopping-needs">Save up to 40% off</span></h2>
+                    <h2 class="text-right"><br>
+                      <span class="shopping-needs"></span></h2>
                   </div>
                 </div>
-                <div class="new-label">
+                {{-- <div class="new-label">
                   <div class="text">NEW</div>
-                </div>
+                </div> --}}
                 <!-- /.new-label -->
               </div>
               <!-- /.wide-banner -->
@@ -372,7 +372,7 @@ Home - Beauty World
           <!-- /.row -->
         </div>
         <!-- /.wide-banners -->
-        <!-- ============================================== WIDE PRODUCTS : END ============================================== -->
+        <!-- ============================================== WIDE PRODUCTS 1: END ============================================== -->
 
         <!-- ============================== ======= skip_category PRODUCTS ============================= ==== -->
 
@@ -525,21 +525,21 @@ Home - Beauty World
       <!-- /.section -->
       <!-- ================================= ==== skip_brand_product PRODUCTS : END ================================== === -->
 
-        <!-- ============================================== WIDE PRODUCTS ============================================== -->
+        <!-- ============================================== WIDE PRODUCTS 2 ============================================== -->
         <div class="wide-banners wow fadeInUp outer-bottom-xs">
           <div class="row">
             <div class="col-md-12">
               <div class="wide-banner cnt-strip">
-                <div class="image"> <img class="img-responsive" src="{{asset('frontend/assets/images/banners/home-banner.jpg')}}" alt=""> </div>
+                <div class="image"><a href="{{url('/category/products/brand/nyx')}}"><img class="img-responsive" src="{{asset('frontend/assets/images/banners/home-banner1.jpg')}}" alt=""></a> </div>
                 <div class="strip strip-text">
                   <div class="strip-inner">
-                    <h2 class="text-right">New Palettes<br>
-                      <span class="shopping-needs">Save up to 40% off</span></h2>
+                    <h2 class="text-right"><br>
+                      <span class="shopping-needs"></span></h2>
                   </div>
                 </div>
-                <div class="new-label">
+                {{-- <div class="new-label">
                   <div class="text">NEW</div>
-                </div>
+                </div> --}}
                 <!-- /.new-label -->
               </div>
               <!-- /.wide-banner -->
@@ -550,7 +550,7 @@ Home - Beauty World
           <!-- /.row -->
         </div>
         <!-- /.wide-banners -->
-        <!-- ============================================== WIDE PRODUCTS : END ============================================== -->
+        <!-- ============================================== WIDE PRODUCTS 2 : END ============================================== -->
 
         <!-- ============================================== FEATURED PRODUCTS ============================================== -->
         @include('frontend.common.featured_products')
@@ -666,7 +666,7 @@ Home - Beauty World
         <!-- /.section -->
         <!-- ============================================== BLOG SLIDER : END ============================================== -->
 
-         <!-- ============================================== WIDE PRODUCTS ============================================== -->
+         <!-- ============================================== WIDE PRODUCTS 3 ============================================== -->
          <div class="wide-banners wow fadeInUp outer-bottom-xs">
           <div class="row">
             <div class="col-md-12">
@@ -691,7 +691,7 @@ Home - Beauty World
           <!-- /.row -->
         </div>
         <!-- /.wide-banners -->
-        <!-- ============================================== WIDE PRODUCTS : END ============================================== -->
+        <!-- ============================================== WIDE PRODUCTS 3 : END ============================================== -->
 
         <!-- ============================================== FEATURED PRODUCTS ============================================== -->
         {{-- <section class="section wow fadeInUp new-arriavls">
