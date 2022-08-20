@@ -58,6 +58,7 @@ return new class extends Migration
             $table->string('price_sign')->nullable();
             $table->text('image_link');
             $table->longText('description_en')->nullable();
+            $table->integer('hot_deals')->default(1);
             $table->integer('featured')->default(1);
             $table->integer('special_offer')->default(1);
             $table->integer('special_deals')->default(1);
