@@ -15,50 +15,7 @@ Tag Wise Products
 
         <div class="sidebar-module-container">
           <div class="sidebar-filter">
-            <!-- ============================================== SHOP BY CATEGORY ============================================== -->
-            {{-- <div class="sidebar-widget wow fadeInUp">
-              <h3 class="section-title">shop by</h3>
-              <div class="widget-header">
-                <h4 class="widget-title">Category</h4>
-              </div>
-              <div class="sidebar-widget-body">
-                <div class="accordion">
-                  @foreach($categories as $category)
-                  <div class="accordion-group">
-                    <div class="accordion-heading"> <a href="#collapse{{ $category->id }}" data-toggle="collapse" class="accordion-toggle collapsed">
-                      @if(session()->get('language') == 'swedish') {{ $category->category_name_sv }}
-                      @else {{ $category->category_name_en }}
-                      @endif </a> </div>
-                    <!-- /.accordion-heading -->
 
-                    <div class="accordion-body collapse" id="collapse{{ $category->id }}" style="height: 0px;">
-                      <div class="accordion-inner">
-                      @php
-                      $subcategories = App\Models\SubCategory::where('category_id',$category->id)->orderBy('subcategory_name_en','ASC')->get();
-                      @endphp
-
-                      @foreach($subcategories as $subcategory)
-                        <ul>
-                          <li><a href="#">
-                            @if(session()->get('language') == 'swedish') {{ $subcategory->subcategory_name_sv }}
-                            @else {{ $subcategory->subcategory_name_en }}
-                            @endif</a></li>
-                        </ul>
-                      @endforeach
-                      </div>
-                      <!-- /.accordion-inner -->
-                    </div>
-                    <!-- /.accordion-body -->
-                  </div>
-                  <!-- /.accordion-group -->
-                  @endforeach
-                </div>
-                <!-- /.accordion -->
-              </div>
-              <!-- /.sidebar-widget-body -->
-            </div> --}}
-            <!-- /.sidebar-widget -->
-            <!-- ============================================== SHOP BY CATEGORY : END ============================================== -->
 
             <!-- ============================================== PRICE SILDER============================================== -->
             <div class="sidebar-widget wow fadeInUp">
@@ -76,46 +33,7 @@ Tag Wise Products
             </div>
             <!-- /.sidebar-widget -->
             <!-- ============================================== PRICE SILDER : END ============================================== -->
-            <!-- ============================================== MANUFACTURES============================================== -->
-            {{-- <div class="sidebar-widget wow fadeInUp">
-              <div class="widget-header">
-                <h4 class="widget-title">Manufactures</h4>
-              </div>
-              <div class="sidebar-widget-body">
-                <ul class="list">
-                  <li><a href="#">Forever 18</a></li>
-                  <li><a href="#">Nike</a></li>
-                  <li><a href="#">Dolce & Gabbana</a></li>
-                  <li><a href="#">Alluare</a></li>
-                  <li><a href="#">Chanel</a></li>
-                  <li><a href="#">Other Brand</a></li>
-                </ul>
-                <!--<a href="#" class="lnk btn btn-primary">Show Now</a>-->
-              </div>
-              <!-- /.sidebar-widget-body -->
-            </div>
-            <!-- /.sidebar-widget --> --}}
-            <!-- ============================================== MANUFACTURES: END ============================================== -->
 
-            {{-- <!-- ============================================== COLOR============================================== -->
-            <div class="sidebar-widget wow fadeInUp">
-              <div class="widget-header">
-                <h4 class="widget-title">Colors</h4>
-              </div>
-              <div class="sidebar-widget-body">
-                <ul class="list">
-                  <li><a href="#">Red</a></li>
-                  <li><a href="#">Blue</a></li>
-                  <li><a href="#">Yellow</a></li>
-                  <li><a href="#">Pink</a></li>
-                  <li><a href="#">Brown</a></li>
-                  <li><a href="#">Teal</a></li>
-                </ul>
-              </div>
-              <!-- /.sidebar-widget-body -->
-            </div>
-            <!-- /.sidebar-widget -->
-            <!-- ============================================== COLOR: END ============================================== --> --}}
             <!-- ============================================== COMPARE============================================== -->
             <div class="sidebar-widget wow fadeInUp outer-top-vs">
               <h3 class="section-title">Compare products</h3>
@@ -153,9 +71,9 @@ Tag Wise Products
             <div class="image"> <img src="{{ asset('frontend/assets/images/banners/cat-banner-1.jpg') }}" alt="" class="img-responsive"> </div>
             <div class="container-fluid">
               <div class="caption vertical-top text-left">
-                <div class="big-text"> Big Sale </div>
-                <div class="excerpt hidden-sm hidden-md" style="color: #5a197a;"> Save up to 49% off </div>
-                <div class="excerpt-normal hidden-sm hidden-md" style="color: black;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit </div>
+                <div class="big-text" style=" color: #75d6d2; margin-top: 130px"> Find Your Thing </div>
+                <div class="excerpt hidden-sm hidden-md" style="color: #5a197a;"> </div>
+                <div class="excerpt-normal hidden-sm hidden-md" style="color: black;"></div>
               </div>
               <!-- /.caption -->
             </div>

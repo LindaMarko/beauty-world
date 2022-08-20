@@ -1,5 +1,12 @@
 @php
-  $hot_deals = App\Models\Product::where('hot_deals',1)->orderBy('price','ASC')->where('price', '!=', '0.0' )->limit(6)->get();
+  $hot_deals = App\Models\Product::where('hot_deals',1)
+  ->orderBy('price','ASC')
+  ->where([
+      ['price', '!=', '0.0'],
+      ['brand', '!=', 'benefit'],
+      ['brand', '!=', 'glossier'],
+  ])
+  ->limit(6)->get();
 @endphp
 
 
@@ -20,20 +27,6 @@
           $discount = ($amount/$product->price) * 100;
           @endphp --}}
 
-          {{-- <div class="timing-wrapper">
-            <div class="box-wrapper">
-              <div class="date box"> <span class="key">120</span> <span class="value">DAYS</span> </div>
-            </div>
-            <div class="box-wrapper">
-              <div class="hour box"> <span class="key">20</span> <span class="value">HRS</span> </div>
-            </div>
-            <div class="box-wrapper">
-              <div class="minutes box"> <span class="key">36</span> <span class="value">MINS</span> </div>
-            </div>
-            <div class="box-wrapper hidden-md">
-              <div class="seconds box"> <span class="key">60</span> <span class="value">SEC</span> </div>
-            </div>
-          </div> --}}
           </div>
           <!-- /.hot-deal-wrapper -->
           <div class="product-info text-left m-t-20">
@@ -57,10 +50,12 @@
 
         <div class="cart clearfix animate-effect">
           <div class="action">
-            <div class="add-cart-button btn-group">
-              <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
-              <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
-            </div>
+            <ul class="list-unstyled">
+              <li class="add-cart-button btn-group">
+                <button class="btn btn-primary icon" type="button" title="Add Cart" data-toggle="modal" data-target="#exampleModal" id="{{ $product->id }}" onclick="productView(this.id)"> <i class="fa fa-shopping-cart"></i></button>
+                <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+              </li>
+            </ul>
           </div>
           <!-- /.action -->
         </div>

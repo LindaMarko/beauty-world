@@ -19,34 +19,38 @@ class IndexController extends Controller
     public function index()
     {
 
-        $products = Product::where('status', 1)->inRandomOrder()->where('price', '!=', '0.0' )->limit(6)->get();
-        // $goodProducts = array();
-        // function get_http_response_code($url) {
-        //         $statusCode = '';
-        //         if(filter_var($url, FILTER_VALIDATE_URL)){
-        //             $headers = get_headers($url);
-        //             $statusCode = substr($headers[0], 9, 3);
-
-        //         }
-        //         return $statusCode;
-
-        //     }
-        // foreach($products as $product) {
-        //     $response = get_http_response_code($product->image_link);
-
-        //     if($response <= 200){
-        //         array_push($goodProducts, $product);
-        //     }
-        //     print_r($goodProducts);
-        // }
-
+        $products = Product::where('status', 1)
+        ->inRandomOrder()
+        ->where([
+            ['price', '!=', '0.0'],
+            ['brand', '!=', 'benefit'],
+            ['brand', '!=', 'glossier'],
+            ['brand', '!=', 'deciem'],
+        ])->limit(6)->get();
 
         $categories = Category::orderBy('category_name_en','ASC')->get();
         $sliders = Slider::where('status',1)->orderBy('id','DESC')->limit(3)->get();
         // $featured = Product::where('featured',1)->where('product_type','eyebrow')->where('price', '!=', '0.0' )->limit(6)->get();
         // $hot_deals = Product::where('hot_deals',1)->orderBy('price','DESC')->where('price', '!=', '0.0' )->limit(3)->get();
-        $special_offer = Product::where('special_offer',1)->orderBy('brand','ASC')->where('price', '!=', '0.0' )->limit(3)->get();
-        $special_deals = Product::where('special_deals',1)->inRandomOrder()->where('price', '!=', '0.0' )->limit(3)->get();
+        $special_offer = Product::where('special_offer',1)
+        ->orderBy('brand','ASC')
+        ->where([
+            ['price', '!=', '0.0'],
+            ['brand', '!=', 'benefit'],
+            ['brand', '!=', 'glossier'],
+            ['brand', '!=', 'deciem'],
+        ])
+        ->limit(3)->get();
+
+        $special_deals = Product::where('special_deals',1)
+        ->inRandomOrder()
+        ->where([
+            ['price', '!=', '0.0'],
+            ['brand', '!=', 'benefit'],
+            ['brand', '!=', 'glossier'],
+            ['brand', '!=', 'deciem'],
+        ])
+        ->limit(3)->get();
 
         $skip_category_1 = Category::skip(1)->first();
         $skip_product_1 = Product::where('status',1)->where('product_type', strtolower($skip_category_1->category_name_en) )->orderBy('id','DESC')->where('price', '!=', '0.0' )->get();
@@ -120,14 +124,29 @@ class IndexController extends Controller
 		$product = Product::findOrFail($id);
         $multiImag = MultiImg::where('product_id',$id)->get();
         $cat_name = $product->product_type;
-		$relatedProducts = Product::where('product_type',strtolower($cat_name))->where('price', '!=', '0.0' )->limit(12)->inRandomOrder()->get();
+		$relatedProducts = Product::where('product_type',strtolower($cat_name))
+        ->where([
+            ['price', '!=', '0.0'],
+            ['brand', '!=', 'benefit'],
+            ['brand', '!=', 'glossier'],
+            ['brand', '!=', 'deciem'],
+        ])
+        ->limit(12)
+        ->inRandomOrder()->get();
         return view('frontend.product.product_details',compact('product','multiImag','relatedProducts', 'cat_name'));
 
 	}
 
     public function TagWiseProduct($tag)
     {
-        $productsWithTags = Product::whereNotNull('product_tags_en')->where('price', '!=', '0.0' )->get();
+        $productsWithTags = Product::whereNotNull('product_tags_en')
+        ->where([
+            ['price', '!=', '0.0'],
+            ['brand', '!=', 'benefit'],
+            ['brand', '!=', 'glossier'],
+            ['brand', '!=', 'deciem'],
+        ])
+        ->get();
         $productsWithClickedTag = array();
         foreach( $productsWithTags as $product) {
             for($i = 0; $i < count($product->product_tags_en); ++$i) {
@@ -149,7 +168,16 @@ class IndexController extends Controller
     // Category wise data
 	public function CatWiseProducts(Request $request, $cat_name)
     {
-		$products = Product::where('status',1)->where('product_type',strtolower($cat_name))->where('price', '!=', '0.0' )->orderBy('id','ASC')->paginate(18);
+		$products = Product::where('status',1)
+        ->where('product_type',strtolower($cat_name))
+        ->where([
+            ['price', '!=', '0.0'],
+            ['brand', '!=', 'benefit'],
+            ['brand', '!=', 'glossier'],
+            ['brand', '!=', 'deciem'],
+        ])
+        ->orderBy('product_name_en','ASC')
+        ->paginate(18);
 		$categories = Category::orderBy('category_name_en','ASC')->get();
         $breadcrumbcat = Category::where('category_name_en',$cat_name)->get();
 
@@ -169,7 +197,7 @@ class IndexController extends Controller
     // Brand wise data
 	public function BrandWiseProducts(Request $request, $brand_name)
     {
-		$products = Product::where('status',1)->where('brand',strtolower($brand_name))->where('price', '!=', '0.0' )->orderBy('id','ASC')->paginate(18);
+		$products = Product::where('status',1)->where('brand',strtolower($brand_name))->where('price', '!=', '0.0' )->orderBy('id','DESC')->paginate(18);
 		$categories = Category::orderBy('category_name_en','ASC')->get();
         $breadcrumbcat = Brand::where('brand_name_en', ucfirst($brand_name))->get();
 
@@ -205,8 +233,15 @@ class IndexController extends Controller
     {
         $request->validate(["search" => "required"]);
 		$item = $request->search;
-        $categories = Category::orderBy('product_type','ASC')->get();
-		$products = Product::where('product_name_en','LIKE',"%$item%")->where('price', '!=', '0.0')->get();
+        $categories = Category::orderBy('category_name_en','ASC')->get();
+
+		$products = Product::where('product_name_en','LIKE',"%$item%")
+        ->where([
+            ['price', '!=', '0.0'],
+            ['brand', '!=', 'benefit'],
+            ['brand', '!=', 'glossier'],
+        ])->get();
+
 		return view('frontend.product.search',compact('products','categories', 'item'));
 
 	}
@@ -216,7 +251,15 @@ class IndexController extends Controller
     {
         $request->validate(["search" => "required"]);
 		$item = $request->search;
-		$products = Product::where('product_name_en','LIKE',"%$item%")->where('price', '!=', '0.0')->select('product_name_en','image_link', 'price', 'id','product_slug_en')->limit(5)->get();
+		$products = Product::where('product_name_en','LIKE',"%$item%")
+        ->where([
+            ['price', '!=', '0.0'],
+            ['brand', '!=', 'benefit'],
+            ['brand', '!=', 'glossier'],
+        ])
+        ->select('product_name_en','image_link', 'price', 'id','product_slug_en')
+        ->limit(5)->get();
+
 		return view('frontend.product.search_product',compact('products'));
 
 

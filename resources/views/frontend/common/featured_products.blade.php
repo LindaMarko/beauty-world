@@ -1,6 +1,13 @@
 
 @php
-$featured = App\Models\Product::where('featured',1)->where('product_type','eyebrow')->where('price', '!=', '0.0' )->limit(9)->get();
+$featured = App\Models\Product::where('featured',1)
+->where('product_type','eyebrow')
+->where([
+  ['price', '!=', '0.0'],
+  ['brand', '!=', 'benefit'],
+  ['brand', '!=', 'glossier'],
+])
+->limit(9)->get();
 @endphp
 
 <section class="section featured-product wow fadeInUp">
