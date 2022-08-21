@@ -56,7 +56,7 @@ Tag Wise Products
           @include('frontend.common.testimonials')
           <!-- ============================================== Testimonials: END ============================================== -->
 
-            <div class="home-banner"> <img src="{{asset('frontend/assets/images/banners/banner-pd.jpg')}}" alt="Image"> </div>
+            <div class="home-banner"> <img src="/frontend/assets/images/banners/banner-pd.jpg" alt="Image"> </div>
           </div>
           <!-- /.sidebar-filter -->
         </div>
@@ -68,7 +68,7 @@ Tag Wise Products
 
         <div id="category" class="category-carousel hidden-xs">
           <div class="item">
-            <div class="image"> <img src="{{ asset('frontend/assets/images/banners/cat-banner-1.jpg') }}" alt="" class="img-responsive"> </div>
+            <div class="image"> <img src="/frontend/assets/images/banners/cat-banner-1.jpg" alt="" class="img-responsive"> </div>
             <div class="container-fluid">
               <div class="caption vertical-top text-left">
                 <div class="big-text" style=" color: #75d6d2; margin-top: 130px"> Find Your Thing </div>
@@ -158,10 +158,11 @@ Tag Wise Products
         </div>
         <!-- ========================================== FILTER OPTIONS END========================================= -->
 
-        <!--    //////////////////// START Product Grid View  ////////////// -->
 
         <div class="search-result-container ">
           <div id="myTabContent" class="tab-content category-list">
+
+            <!-- ===================== START Product Grid View ====================== -->
             <div class="tab-pane active " id="grid-container">
               <div class="category-product">
                 <div class="row">
@@ -227,9 +228,9 @@ Tag Wise Products
               <!-- /.category-product -->
             </div>
             <!-- /.tab-pane -->
-            <!--            //////////////////// END Product Grid View  ////////////// -->
+            <!--  ======================== END Product Grid View ===================== -->
 
-            <!--            //////////////////// Product List View Start ////////////// -->
+            <!-- =========================== Product List View Start ========================== -->
             <div class="tab-pane "  id="list-container">
               <div class="category-product">
                 @foreach($productsWithClickedTag  as $product)
@@ -309,6 +310,7 @@ Tag Wise Products
               <!-- /.category-product -->
             </div>
             <!-- /.tab-pane #list-container -->
+            <!-- ======================= Product List View END ====================== -->
           </div>
           <!-- /.tab-content -->
           <div class="clearfix filters-container">

@@ -5,6 +5,7 @@
       ['price', '!=', '0.0'],
       ['brand', '!=', 'benefit'],
       ['brand', '!=', 'glossier'],
+      ['brand', '!=', 'deciem'],
   ])
   ->limit(6)->get();
 @endphp

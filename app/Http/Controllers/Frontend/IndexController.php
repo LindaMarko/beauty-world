@@ -182,7 +182,7 @@ class IndexController extends Controller
             ['brand', '!=', 'glossier'],
             ['brand', '!=', 'deciem'],
         ])
-        ->orderBy('product_name_en','ASC')
+        ->orderBy('id','ASC')
         ->paginate(18);
 		$categories = Category::orderBy('category_name_en','ASC')->get();
         $breadcrumbcat = Category::where('category_name_en',$cat_name)->get();
@@ -203,7 +203,10 @@ class IndexController extends Controller
     // Brand wise data
 	public function BrandWiseProducts(Request $request, $brand_name)
     {
-		$products = Product::where('status',1)->where('brand',strtolower($brand_name))->where('price', '!=', '0.0' )->orderBy('id','DESC')->paginate(18);
+		$products = Product::where('status',1)
+        ->where('brand',strtolower($brand_name))
+        ->where('price', '!=', '0.0' )
+        ->orderBy('id','ASC')->paginate(18);
 		$categories = Category::orderBy('category_name_en','ASC')->get();
         $breadcrumbcat = Brand::where('brand_name_en', ucfirst($brand_name))->get();
 
@@ -246,6 +249,7 @@ class IndexController extends Controller
             ['price', '!=', '0.0'],
             ['brand', '!=', 'benefit'],
             ['brand', '!=', 'glossier'],
+            ['brand', '!=', 'deciem'],
         ])->get();
 
 		return view('frontend.product.search',compact('products','categories', 'item'));
@@ -262,12 +266,12 @@ class IndexController extends Controller
             ['price', '!=', '0.0'],
             ['brand', '!=', 'benefit'],
             ['brand', '!=', 'glossier'],
+            ['brand', '!=', 'deciem'],
         ])
         ->select('product_name_en','image_link', 'price', 'id','product_slug_en')
         ->limit(5)->get();
 
 		return view('frontend.product.search_product',compact('products'));
-
 
 	}
 

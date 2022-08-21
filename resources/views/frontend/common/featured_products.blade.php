@@ -8,6 +8,7 @@ $featured = App\Models\Product::where('featured',1)
   ['brand', '!=', 'glossier'],
   ['brand', '!=', 'deciem'],
 ])
+->orderBy('id','ASC')
 ->limit(9)->get();
 @endphp
 
