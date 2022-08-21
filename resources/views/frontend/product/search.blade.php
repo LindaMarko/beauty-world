@@ -53,12 +53,12 @@ Category Wise Products
       <div class='col-md-9'>
         <!-- ========================================== SECTION – HERO ========================================= -->
 
-        <div id="category" class="category-carousel hidden-xs">
+        <div id="category" class="category-carousel">
           <div class="item">
             <div class="image"> <img src="/frontend/assets/images/banners/cat-banner-1.jpg" alt="" class="img-responsive"> </div>
             <div class="container-fluid">
               <div class="caption vertical-top text-left">
-                <div class="big-text" style=" color: #75d6d2; margin-top: 130px"> Find Your Thing </div>
+                <div class="big-text"> Find Your Thing </div>
                 <div class="excerpt hidden-sm hidden-md" style="color: #5a197a;"> </div>
                 <div class="excerpt-normal hidden-sm hidden-md" style="color: black;"></div>
               </div>

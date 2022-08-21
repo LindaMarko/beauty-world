@@ -68,13 +68,13 @@ Category Wise Products
       <div class='col-md-9'>
         <!-- ========================================== SECTION – HERO ========================================= -->
 
-        <div id="category" class="category-carousel hidden-xs">
+        <div id="category" class="category-carousel">
           <div class="item">
             <div class="image"> <img src="/frontend/assets/images/banners/cat-banner-2.jpg" alt="" class="img-responsive"> </div>
             <div class="container-fluid">
               <div class="caption vertical-top text-left">
                 @foreach($breadcrumbcat as $item)
-                <div class="big-text" style="color: #4ecac5; margin-top: 200px;"> {{ str_replace('_', ' ', strtoupper($item->category_name_en)) }} </div>
+                <div class="big-text"> {{ str_replace('_', ' ', strtoupper($item->category_name_en)) }} </div>
                 @endforeach
                 {{-- <div class="excerpt hidden-sm hidden-md" style="color: #5a197a;"> Save up to 49% off </div> --}}
                 {{-- <div class="excerpt-normal hidden-sm hidden-md" style="color: black;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit </div> --}}
