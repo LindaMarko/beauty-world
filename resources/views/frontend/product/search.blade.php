@@ -33,19 +33,7 @@ Category Wise Products
             <!-- /.sidebar-widget -->
             <!-- ============================================== PRICE SILDER : END ============================================== -->
 
-            <!-- ============================================== COMPARE============================================== -->
-            <div class="sidebar-widget wow fadeInUp outer-top-vs">
-              <h3 class="section-title">Compare products</h3>
-              <div class="sidebar-widget-body">
-                <div class="compare-report">
-                  <p>You have no <span>item(s)</span> to compare</p>
-                </div>
-                <!-- /.compare-report -->
-              </div>
-              <!-- /.sidebar-widget-body -->
-            </div>
-            <!-- /.sidebar-widget -->
-            <!-- ============================================== COMPARE: END ============================================== -->
+
             <!-- ============================================== PRODUCT TAGS ============================================== -->
             @include('frontend.common.product_tags')
             <!-- ============================================== PRODUCT TAGS END ============================================== -->
@@ -94,65 +82,7 @@ Category Wise Products
               <!-- /.filter-tabs -->
             </div>
             <!-- /.col -->
-            <div class="col col-sm-12 col-md-6">
-              <div class="col col-sm-3 col-md-6 no-padding">
-                <div class="lbl-cnt"> <span class="lbl">Sort by</span>
-                  <div class="fld inline">
-                    <div class="dropdown dropdown-small dropdown-med dropdown-white inline">
-                      <button data-toggle="dropdown" type="button" class="btn dropdown-toggle"> Position <span class="caret"></span> </button>
-                      <ul role="menu" class="dropdown-menu">
-                        <li role="presentation"><a href="#">position</a></li>
-                        <li role="presentation"><a href="#">Price:Lowest first</a></li>
-                        <li role="presentation"><a href="#">Price:HIghest first</a></li>
-                        <li role="presentation"><a href="#">Product Name:A to Z</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <!-- /.fld -->
-                </div>
-                <!-- /.lbl-cnt -->
-              </div>
-              <!-- /.col -->
-              <div class="col col-sm-3 col-md-6 no-padding">
-                <div class="lbl-cnt"> <span class="lbl">Show</span>
-                  <div class="fld inline">
-                    <div class="dropdown dropdown-small dropdown-med dropdown-white inline">
-                      <button data-toggle="dropdown" type="button" class="btn dropdown-toggle"> 1 <span class="caret"></span> </button>
-                      <ul role="menu" class="dropdown-menu">
-                        <li role="presentation"><a href="#">1</a></li>
-                        <li role="presentation"><a href="#">2</a></li>
-                        <li role="presentation"><a href="#">3</a></li>
-                        <li role="presentation"><a href="#">4</a></li>
-                        <li role="presentation"><a href="#">5</a></li>
-                        <li role="presentation"><a href="#">6</a></li>
-                        <li role="presentation"><a href="#">7</a></li>
-                        <li role="presentation"><a href="#">8</a></li>
-                        <li role="presentation"><a href="#">9</a></li>
-                        <li role="presentation"><a href="#">10</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <!-- /.fld -->
-                </div>
-                <!-- /.lbl-cnt -->
-              </div>
-              <!-- /.col -->
-            </div>
-            <!-- /.col -->
-            <div class="col col-sm-6 col-md-4 text-right">
-              {{-- <div class="pagination-container">
-                <ul class="list-inline list-unstyled">
-                  <li class="prev"><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                  <li><a href="#">1</a></li>
-                  <li class="active"><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li class="next"><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                </ul>
-                <!-- /.list-inline -->
-              </div> --}}
-              <!-- /.pagination-container --> </div>
-            <!-- /.col -->
+
           </div>
           <!-- /.row -->
         </div>
@@ -207,8 +137,10 @@ Category Wise Products
                                 <button class="btn btn-primary icon" type="button" title="Add Cart" data-toggle="modal" data-target="#exampleModal" id="{{ $product->id }}" onclick="productView(this.id)"> <i class="fa fa-shopping-cart"></i></button>
                                 <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
                               </li>
-                              <li class="lnk wishlist"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
-                              <li class="lnk"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                              <li>
+                                <button class="btn btn-primary icon" type="button" title="Wishlist" id="{{ $product->id }}" onclick="addToWishList(this.id)"> <i class="fa fa-heart"></i> </button>
+                              </li>
+                              {{-- <li class="lnk"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li> --}}
                             </ul>
                           </div>
                           <!-- /.action -->
@@ -271,8 +203,10 @@ Category Wise Products
                                     <button class="btn btn-primary icon" type="button" title="Add Cart" data-toggle="modal" data-target="#exampleModal" id="{{ $product->id }}" onclick="productView(this.id)"> <i class="fa fa-shopping-cart"></i></button>
                                     <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
                                   </li>
-                                  <li class="lnk wishlist"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
-                                  <li class="lnk"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                                  <li>
+                                    <button class="btn btn-primary icon" type="button" title="Wishlist" id="{{ $product->id }}" onclick="addToWishList(this.id)"> <i class="fa fa-heart"></i> </button>
+                                  </li>
+                                  {{-- <li class="lnk"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li> --}}
                                 </ul>
                               </div>
                               <!-- /.action -->

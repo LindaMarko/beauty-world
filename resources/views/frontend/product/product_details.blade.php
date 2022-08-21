@@ -141,24 +141,16 @@
                 @endif
               </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-6" >
               <div class="favorite-button m-t-10">
-                <a class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Wishlist" href="#">
-                    <i class="fa fa-heart"></i>
-                </a>
-                <a class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Add to Compare" href="#">
-                  <i class="fa fa-signal"></i>
-                </a>
-                <a class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="E-mail" href="#">
-                    <i class="fa fa-envelope"></i>
-                </a>
+                <button class="btn btn-primary icon action" type="button" title="Wishlist" id="{{ $product->id }}" onclick="addToWishList(this.id)"> <i class="fa fa-heart"></i> </button>
               </div>
             </div>
           </div><!-- /.row -->
         </div><!-- /.price-container -->
 
 
-        <!-- ====================== Add Product Color and Size =========================== -->
+        <!-- ====================== Add Product Color  =========================== -->
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group">
@@ -175,25 +167,7 @@
               @endif
             </div> <!-- // end form group -->
           </div> <!-- // end col 6 -->
-
-          <div class="col-sm-6">
-            <div class="form-group">
-              @if($product->product_size_en == null)
-
-              @else
-              <label class="info-title control-label">Choose Size <span> </span></label>
-              <select class="form-control unicase-form-control selectpicker" id="size" style="display: none;">
-                <option selected="" disabled="">--Choose Size--</option>
-                @foreach($product_size_en as $size)
-                <option value="{{ $size }}">{{ $size }}</option>
-                @endforeach
-              </select>
-              @endif
-            </div> <!-- // end form group -->
-          </div> <!-- // end col 6 -->
-        </div><!-- /.row -->
-
-       <!-- ====================== END - Add Product Color and Size =========================== -->
+       <!-- ====================== END - Add Product Color =========================== -->
 
         <div class="quantity-container info-container">
           <div class="row">
@@ -273,14 +247,6 @@
                         <tbody>
                           <tr>
                             <td class="cell-label">Quality</td>
-                            <td><input type="radio" name="quality" class="radio" value="1"></td>
-                            <td><input type="radio" name="quality" class="radio" value="2"></td>
-                            <td><input type="radio" name="quality" class="radio" value="3"></td>
-                            <td><input type="radio" name="quality" class="radio" value="4"></td>
-                            <td><input type="radio" name="quality" class="radio" value="5"></td>
-                          </tr>
-                          <tr>
-                            <td class="cell-label">Price</td>
                             <td><input type="radio" name="quality" class="radio" value="1"></td>
                             <td><input type="radio" name="quality" class="radio" value="2"></td>
                             <td><input type="radio" name="quality" class="radio" value="3"></td>
@@ -399,9 +365,12 @@
                       <button class="btn btn-primary icon" type="button" title="Add Cart" data-toggle="modal" data-target="#exampleModal" id="{{ $product->id }}" onclick="productView(this.id)"> <i class="fa fa-shopping-cart"></i></button>
                       <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
                     </li>
-                    <li class="lnk wishlist"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
-                    <li class="lnk"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                    <li>
+                      <button class="btn btn-primary icon" type="button" title="Wishlist" id="{{ $product->id }}" onclick="addToWishList(this.id)"> <i class="fa fa-heart"></i> </button>
+                    </li>
+                    {{-- <li class="lnk"> <a data-toggle="tooltip" class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li> --}}
                   </ul>
+
                 </div><!-- /.action -->
               </div><!-- /.cart -->
             </div><!-- /.product -->

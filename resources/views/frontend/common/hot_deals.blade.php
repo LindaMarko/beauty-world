@@ -32,7 +32,7 @@
           <!-- /.hot-deal-wrapper -->
           <div class="product-info text-left m-t-20">
             <h3 class="name">
-              <a href="detail.html">
+              <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}">
               @if(session()->get('language') == 'swedish') {{ $product->product_name_sv }}
               @else {{ $product->product_name_en }}
               @endif
