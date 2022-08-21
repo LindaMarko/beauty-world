@@ -30,8 +30,6 @@ class IndexController extends Controller
 
         $categories = Category::orderBy('category_name_en','ASC')->get();
         $sliders = Slider::where('status',1)->orderBy('id','DESC')->limit(3)->get();
-        // $featured = Product::where('featured',1)->where('product_type','eyebrow')->where('price', '!=', '0.0' )->limit(6)->get();
-        // $hot_deals = Product::where('hot_deals',1)->orderBy('price','DESC')->where('price', '!=', '0.0' )->limit(3)->get();
         $special_offer = Product::where('special_offer',1)
         ->orderBy('brand','ASC')
         ->where([
@@ -53,7 +51,15 @@ class IndexController extends Controller
         ->limit(3)->get();
 
         $skip_category_1 = Category::skip(1)->first();
-        $skip_product_1 = Product::where('status',1)->where('product_type', strtolower($skip_category_1->category_name_en) )->orderBy('id','DESC')->where('price', '!=', '0.0' )->get();
+        $skip_product_1 = Product::where('status',1)->
+        where('product_type', strtolower($skip_category_1->category_name_en) )
+        ->orderBy('id','DESC')
+        ->where([
+            ['price', '!=', '0.0'],
+            ['brand', '!=', 'benefit'],
+            ['brand', '!=', 'glossier'],
+            ['brand', '!=', 'deciem'],
+        ])->get();
 
         $skip_brand_19 = Brand::skip(19)->first();
     	$skip_brand_product_19 = Product::where('status',1)->where('brand', strtolower($skip_brand_19->brand_name_en))->orderBy('id','ASC')->where('price', '!=', '0.0' )->get();

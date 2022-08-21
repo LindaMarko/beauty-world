@@ -8,7 +8,7 @@ Category Wise Products
   <div class="container">
     <div class="breadcrumb-inner">
       <ul class="list-inline list-unstyled">
-        <li><a href="#">Home</a></li>
+        <li><a href="/">Home</a></li>
         @foreach($breadcrumbcat as $item)
         <li class='active'>{{ str_replace('_', ' ', strtoupper($item->category_name_en)) }}</li>
         @endforeach
@@ -50,25 +50,6 @@ Category Wise Products
             <!-- /.sidebar-widget -->
             <!-- ============================================== PRICE SILDER : END ============================================== -->
 
-            {{-- <!-- ============================================== COLOR============================================== -->
-            <div class="sidebar-widget wow fadeInUp">
-              <div class="widget-header">
-                <h4 class="widget-title">Colors</h4>
-              </div>
-              <div class="sidebar-widget-body">
-                <ul class="list">
-                  <li><a href="#">Red</a></li>
-                  <li><a href="#">Blue</a></li>
-                  <li><a href="#">Yellow</a></li>
-                  <li><a href="#">Pink</a></li>
-                  <li><a href="#">Brown</a></li>
-                  <li><a href="#">Teal</a></li>
-                </ul>
-              </div>
-              <!-- /.sidebar-widget-body -->
-            </div>
-            <!-- /.sidebar-widget -->
-            <!-- ============================================== COLOR: END ============================================== --> --}}
             <!-- ============================================== COMPARE============================================== -->
             <div class="sidebar-widget wow fadeInUp outer-top-vs">
               <h3 class="section-title">Compare products</h3>
@@ -90,7 +71,7 @@ Category Wise Products
             @include('frontend.common.testimonials')
             <!-- ============================================== Testimonials: END ============================================== -->
 
-            <div class="home-banner"> <img src="{{asset('frontend/assets/images/banners/banner-pd.jpg')}}" alt="Image"> </div>
+            <div class="home-banner"> <img src="/frontend/assets/images/banners/banner-pd.jpg" alt="Image"> </div>
           </div><br><br>
           <!-- /.sidebar-filter -->
         </div>
@@ -102,7 +83,7 @@ Category Wise Products
 
         <div id="category" class="category-carousel hidden-xs">
           <div class="item">
-            <div class="image"> <img src="{{ asset('frontend/assets/images/banners/cat-banner-2.jpg') }}" alt="" class="img-responsive"> </div>
+            <div class="image"> <img src="/frontend/assets/images/banners/cat-banner-2.jpg" alt="" class="img-responsive"> </div>
             <div class="container-fluid">
               <div class="caption vertical-top text-left">
                 @foreach($breadcrumbcat as $item)
@@ -235,7 +216,7 @@ Category Wise Products
         </div>
         <!-- /.search-result-container -->
         <div class="ajax-loadmore-product text-center" style="display: none;">
-          <img src="{{ asset('frontend/assets/images/loader.svg') }}" style="width: 56px; height: 56px;">
+          <img src="/frontend/assets/images/loader.svg" style="width: 56px; height: 56px;">
         </div>
       </div>
       <!-- /.col -->

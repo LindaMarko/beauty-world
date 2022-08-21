@@ -18,16 +18,16 @@ foreach ($productsWithTags as $product) {
   <h3 class="section-title">Product tags</h3>
   <div class="sidebar-widget-body outer-top-xs">
     <div class="tag-list">
-    @if(session()->get('language') == 'swedish')
+    {{-- @if(session()->get('language') == 'swedish')
       @foreach($tags_sv as $tag)
         @if($tag)
         <a class="item active" title="{{$tag}}" href="{{ url('product/tag/'.$tag) }}">
           {{-- {{ str_replace(',',' ',$tag->product_tags_en)  }} --}}
-          {{ ucfirst($tag) }}
-        </a>
-        @endif
+          {{-- {{ ucfirst($tag) }}
+        </a> --}}
+        {{-- @endif
       @endforeach
-    @else
+    @else --}}
       @foreach($tags_en as $tag)
         @if($tag)
           <a class="item active" title="{{$tag}}" href="{{ url('product/tag/'.$tag) }}">
@@ -36,7 +36,7 @@ foreach ($productsWithTags as $product) {
           </a>
         @endif
       @endforeach
-    @endif
+    {{-- @endif --}}
 
     </div>
     <!-- /.tag-list -->

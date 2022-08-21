@@ -6,11 +6,11 @@
       <div class="header-top-inner">
         <div class="cnt-account">
           <ul class="list-unstyled">
-            <li><a href="#"><i class="icon fa fa-user"></i>
+            {{-- <li><a href="#"><i class="icon fa fa-user"></i>
               @if(session()->get('language') == 'swedish') Mitt konto
               @else My Account
               @endif</a>
-            </li>
+            </li> --}}
             <li><a href="#"><i class="icon fa fa-heart"></i>Wishlist</a></li>
             <li><a href="{{route('mycart')}}"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
             <li><a href="{{ route('checkout') }}"><i class="icon fa fa-check"></i>Checkout</a></li>
@@ -64,7 +64,7 @@
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
           <!-- ============================================================= LOGO ============================================================= -->
-          <div class="logo"> <a href="{{url('/')}}"> <img src="{{asset('frontend/assets/images/logo2.png')}}" alt="logo"> </a> </div>
+          <div class="logo"> <a href="{{url('/')}}"> <img src="/frontend/assets/images/logo2.png" alt="logo"> </a> </div>
           <!-- /.logo -->
           <!-- ============================================================= LOGO : END ============================================================= --> </div>
         <!-- /.logo-holder -->
@@ -142,7 +142,7 @@
             <div class="nav-outer">
               <ul class="nav navbar-nav">
                 <li class="active dropdown yamm-fw">
-                  <a href="{{ url('/') }}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">
+                  <a href="/" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">
                     @if(session()->get('language') == 'swedish') Hem
                     @else Home
                     @endif
@@ -190,7 +190,7 @@
                             @endforeach <!-- // End SubCategory Foreach --> --}}
 
                             {{-- <div class="col-xs-12 col-sm-6 col-md-4 col-menu banner-image">
-                              <img class="img-responsive" src="{{ asset('frontend/assets/images/banners/top-menu-banner.jpg') }}" alt=""> </div>
+                              <img class="img-responsive" src="/frontend/assets/images/banners/top-menu-banner.jpg" alt=""> </div>
                               <!-- /.yamm-content -->
                             </div> --}}
                           {{-- </div>

@@ -95,12 +95,6 @@
             <select class="form-control" id="color">
             </select>
           </div>  <!-- // end form group -->
-          {{-- <div class="form-group">
-            <label for="size">Choose Size</label>
-            <select class="form-control" id="size">
-              <option>1</option>
-            </select>
-          </div>  <!-- // end form group --> --}}
           <div class="form-group">
             <label for="qty">Quantity</label>
             <input type="number" class="form-control" id="qty" value="1" min="1" >
@@ -149,7 +143,6 @@
         var id = $('#product_id').val();
         var price = $('#price').text();
         // var color = $('#color option:selected').text();
-        // var size = $('#size option:selected').text();
         var quantity = $('#qty').val();
         $.ajax({
             type: "POST",
@@ -200,30 +193,30 @@
          success:function(response){
             //  console.log(response)
 
-              $('span[id="cartSubTotal"]').text(response.cartTotal);
-              $('#cartQty').text(response.cartQty);
-              var miniCart = ""
-                $.each(response.cartItems, function(key,value){
-                    miniCart += `<div class="cart-item product-summary">
-                      <div class="row">
-                        <div class="col-xs-4">
-                          <div class="image"> <a href="/product/details/${value.id}/${value.options.slug}"><img src="${value.options.image}" alt="${value.name}"></a> </div>
-                        </div>
-                        <div class="col-xs-7">
-                          <h3 class="name"><a href="/product/details/${value.id}/${value.options.slug}">${value.name}</a></h3>
-                          <div class="price"> $${value.price} * ${value.qty} </div>
-                        </div>
-                        <div class="col-xs-1 action">
-                          <button type="submit" id="${value.rowId}" onclick="miniCartRemove(this.id)"><i class="fa fa-trash"></i></button>
-                        </div>
-                      </div>
+          $('span[id="cartSubTotal"]').text(response.cartTotal);
+          $('#cartQty').text(response.cartQty);
+          var miniCart = ""
+            $.each(response.cartItems, function(key,value){
+                miniCart += `<div class="cart-item product-summary">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      <div class="image"> <a href="/product/details/${value.id}/${value.options.slug}"><img src="${value.options.image}" alt="${value.name}"></a> </div>
                     </div>
-                    <!-- /.cart-item -->
-                    <div class="clearfix"></div>
-                    <hr>`
-                    });
+                    <div class="col-xs-7">
+                      <h3 class="name"><a href="/product/details/${value.id}/${value.options.slug}">${value.name}</a></h3>
+                      <div class="price"> $${value.price} * ${value.qty} </div>
+                    </div>
+                    <div class="col-xs-1 action">
+                      <button type="submit" id="${value.rowId}" onclick="miniCartRemove(this.id)"><i class="fa fa-trash"></i></button>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.cart-item -->
+                <div class="clearfix"></div>
+                <hr>`
+                });
 
-                $('#miniCart').html(miniCart);
+            $('#miniCart').html(miniCart);
         }
      })
   }
@@ -274,31 +267,31 @@
          success:function(response){
           var rows = ""
             $.each(response.carts, function(key,value){
-                rows += `
-                <tr style="text-align: center;">
-                  <td class="col-md-2"><img src="${value.options.image} " alt="${value.name}" style="width:60px; height:60px;"></td>
-                  <td class="col-md-2">
-                    <div class="product-name"><a href="/product/details/${value.id}/${value.options.slug}">${value.name}</a></div>
-                      <div class="price"> $${value.price}</div>
-                  </td>
+              rows += `
+              <tr style="text-align: center;">
+                <td class="col-md-2"><img src="${value.options.image} " alt="${value.name}" style="width:60px; height:60px;"></td>
+                <td class="col-md-2">
+                  <div class="product-name"><a href="/product/details/${value.id}/${value.options.slug}">${value.name}</a></div>
+                    <div class="price"> $${value.price}</div>
+                </td>
 
-                  <td class="col-md-2">
-                    ${value.qty >= 1
-                    ? `<button type="submit" class="btn btn-danger btn-sm" id="${value.rowId}" onclick="cartDecrement(this.id)" >-</button> `
-                    : `<button type="submit" class="btn btn-danger btn-sm" disabled >-</button> `
-                    }
-                    <input type="text" value="${value.qty}" min="1" max="100" disabled="" style="width:25px;" >
-                    <button type="submit" class="btn btn-success btn-sm" id="${value.rowId}" onclick="cartIncrement(this.id)" >+</button>
-                  </td>
-                  <td class="col-md-2">
-                    <strong>$${value.subtotal} </strong>
-                  </td>
-                  <td class="col-md-1 close-btn">
-                    <button type="submit" class="" id="${value.rowId}" onclick="cartRemove(this.id)"><i class="fa fa-times"></i></button>
-                  </td>
-                </tr>`
-            });
-            $('#cartPage').html(rows);
+                <td class="col-md-2">
+                  ${value.qty >= 1
+                  ? `<button type="submit" class="btn btn-danger btn-sm" id="${value.rowId}" onclick="cartDecrement(this.id)" >-</button> `
+                  : `<button type="submit" class="btn btn-danger btn-sm" disabled >-</button> `
+                  }
+                  <input type="text" value="${value.qty}" min="1" max="100" disabled="" style="width:25px;" >
+                  <button type="submit" class="btn btn-success btn-sm" id="${value.rowId}" onclick="cartIncrement(this.id)" >+</button>
+                </td>
+                <td class="col-md-2">
+                  <strong>$${value.subtotal} </strong>
+                </td>
+                <td class="col-md-1 close-btn">
+                  <button type="submit" class="" id="${value.rowId}" onclick="cartRemove(this.id)"><i class="fa fa-times"></i></button>
+                </td>
+              </tr>`
+          });
+          $('#cartPage').html(rows);
           }
         })
     }

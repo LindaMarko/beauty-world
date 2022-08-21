@@ -4,19 +4,6 @@
 Category Wise Products
 @endsection
 
-<div class="breadcrumb">
-  <div class="container">
-    <div class="breadcrumb-inner">
-      <ul class="list-inline list-unstyled">
-        <li><a href="#">Home</a></li>
-        <li class='active'>Handbags</li>
-      </ul>
-    </div>
-    <!-- /.breadcrumb-inner -->
-  </div>
-  <!-- /.container -->
-</div>
-<!-- /.breadcrumb -->
 <div class="body-content outer-top-xs">
   <div class='container'>
     <div class='row'>
@@ -45,46 +32,7 @@ Category Wise Products
             </div>
             <!-- /.sidebar-widget -->
             <!-- ============================================== PRICE SILDER : END ============================================== -->
-            <!-- ============================================== MANUFACTURES============================================== -->
-            {{-- <div class="sidebar-widget wow fadeInUp">
-              <div class="widget-header">
-                <h4 class="widget-title">Manufactures</h4>
-              </div>
-              <div class="sidebar-widget-body">
-                <ul class="list">
-                  <li><a href="#">Forever 18</a></li>
-                  <li><a href="#">Nike</a></li>
-                  <li><a href="#">Dolce & Gabbana</a></li>
-                  <li><a href="#">Alluare</a></li>
-                  <li><a href="#">Chanel</a></li>
-                  <li><a href="#">Other Brand</a></li>
-                </ul>
-                <!--<a href="#" class="lnk btn btn-primary">Show Now</a>-->
-              </div>
-              <!-- /.sidebar-widget-body -->
-            </div>
-            <!-- /.sidebar-widget --> --}}
-            <!-- ============================================== MANUFACTURES: END ============================================== -->
 
-            {{-- <!-- ============================================== COLOR============================================== -->
-            <div class="sidebar-widget wow fadeInUp">
-              <div class="widget-header">
-                <h4 class="widget-title">Colors</h4>
-              </div>
-              <div class="sidebar-widget-body">
-                <ul class="list">
-                  <li><a href="#">Red</a></li>
-                  <li><a href="#">Blue</a></li>
-                  <li><a href="#">Yellow</a></li>
-                  <li><a href="#">Pink</a></li>
-                  <li><a href="#">Brown</a></li>
-                  <li><a href="#">Teal</a></li>
-                </ul>
-              </div>
-              <!-- /.sidebar-widget-body -->
-            </div>
-            <!-- /.sidebar-widget -->
-            <!-- ============================================== COLOR: END ============================================== --> --}}
             <!-- ============================================== COMPARE============================================== -->
             <div class="sidebar-widget wow fadeInUp outer-top-vs">
               <h3 class="section-title">Compare products</h3>
@@ -107,7 +55,7 @@ Category Wise Products
           @include('frontend.common.testimonials')
           <!-- ============================================== Testimonials: END ============================================== -->
 
-            <div class="home-banner"> <img src="{{asset('frontend/assets/images/banners/banner-pd.jpg')}}" alt="Image"> </div>
+            <div class="home-banner"> <img src="/frontend/assets/images/banners/banner-pd.jpg" alt="Image"> </div>
           </div><br><br>
           <!-- /.sidebar-filter -->
         </div>
@@ -119,12 +67,12 @@ Category Wise Products
 
         <div id="category" class="category-carousel hidden-xs">
           <div class="item">
-            <div class="image"> <img src="{{ asset('frontend/assets/images/banners/cat-banner-1.jpg') }}" alt="" class="img-responsive"> </div>
+            <div class="image"> <img src="/frontend/assets/images/banners/cat-banner-1.jpg" alt="" class="img-responsive"> </div>
             <div class="container-fluid">
               <div class="caption vertical-top text-left">
-                <div class="big-text"> Big Sale </div>
-                <div class="excerpt hidden-sm hidden-md" style="color: #5a197a;"> Save up to 49% off </div>
-                <div class="excerpt-normal hidden-sm hidden-md" style="color: black;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit </div>
+                <div class="big-text" style=" color: #75d6d2; margin-top: 130px"> Find Your Thing </div>
+                <div class="excerpt hidden-sm hidden-md" style="color: #5a197a;"> </div>
+                <div class="excerpt-normal hidden-sm hidden-md" style="color: black;"></div>
               </div>
               <!-- /.caption -->
             </div>
@@ -222,7 +170,7 @@ Category Wise Products
                     <div class="products">
                       <div class="product">
                         <div class="product-image">
-                          <div class="image"> <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"><img  src="{{ asset($product->image_link) }}"  alt="{{ $product->product_name_en}}"  height="250"></a> </div>
+                          <div class="image"> <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"><img  src="{{ $product->image_link }}"  alt="{{ $product->product_name_en}}"  height="250"></a> </div>
                           <!-- /.image -->
 
                         {{-- @php
@@ -291,7 +239,7 @@ Category Wise Products
                       <div class="row product-list-row">
                         <div class="col col-sm-4 col-lg-4">
                           <div class="product-image">
-                            <div class="image"><a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"> <img src="{{ asset($product->image_link) }}" alt="{{ $product->product_name_en}}" height="250"> </div>
+                            <div class="image"><a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"> <img src="{{ $product->image_link }}" alt="{{ $product->product_name_en}}" height="250"> </div>
                           </div>
                           <!-- /.product-image -->
                         </div>

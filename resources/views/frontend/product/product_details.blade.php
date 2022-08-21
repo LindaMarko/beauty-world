@@ -21,7 +21,7 @@
 			<div class='col-md-3 sidebar'>
 				<div class="sidebar-module-container">
 				<div class="home-banner outer-top-n">
-          <img src="{{ asset('frontend/assets/images/banners/banner-pd2.jpg') }}" alt="Image">
+          <img src="/frontend/assets/images/banners/banner-pd2.jpg" alt="Image">
         </div><br>
 
 <!-- ============================================== NEWSLETTER ============================================== -->
@@ -44,28 +44,7 @@
 <!-- ============================================== HOT DEALS: END ============================================== -->
 
 <!-- ============================================== Testimonials============================================== -->
-<div class="sidebar-widget  wow fadeInUp outer-top-vs ">
-	<div id="advertisement" class="advertisement">
-    <div class="item">
-      <div class="avatar"><img src="{{ asset('frontend/assets/images/testimonials/member1.png') }} " alt="Image"></div>
-<div class="testimonials"><em>"</em> Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
-<div class="clients_author">John Doe	<span>Abc Company</span>	</div><!-- /.container-fluid -->
-  </div><!-- /.item -->
-
-   <div class="item">
-    <div class="avatar"><img src="{{ asset('frontend/assets/images/testimonials/member3.png') }} " alt="Image"></div>
-		<div class="testimonials"><em>"</em>Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
-		<div class="clients_author">Stephen Doe	<span>Xperia Designs</span>	</div>
-        </div><!-- /.item -->
-
-        <div class="item">
-          <div class="avatar"><img src="{{ asset('frontend/assets/images/testimonials/member2.png') }} " alt="Image"></div>
-		<div class="testimonials"><em>"</em> Vtae sodales aliq uam morbi non sem lacus port mollis. Nunc condime tum metus eud molest sed consectetuer.<em>"</em></div>
-		<div class="clients_author">Saraha Smith	<span>Datsun &amp; Co</span>	</div><!-- /.container-fluid -->
-        </div><!-- /.item -->
-
-    </div><!-- /.owl-carousel -->
-</div>
+@include('frontend.common.testimonials')
 
 <!-- ============================================== Testimonials: END ============================================== -->
 
@@ -81,8 +60,8 @@
         <div class="product-item-holder size-big single-product-gallery small-gallery">
           <div id="owl-single-product">
             <div class="image">
-              <a href="{{ asset($product->image_link) }} ">
-                <img src="{{ asset($product->image_link ) }}" alt="{{ $product->product_name_en }}" data-echo="{{ asset($product->image_link ) }}" width="260" />
+              <a href="{{$product->image_link}}">
+                <img src="{{$product->image_link}}" alt="{{ $product->product_name_en }}" data-echo="{{ $product->image_link}}" width="260" />
               </a>
             </div><!-- /.single-product-gallery-item -->
 
@@ -91,8 +70,8 @@
 
             {{-- @foreach($multiImag as $img)
             <div class="single-product-gallery-item" id="slide{{ $img->id }}">
-              <a data-lightbox="image-1" data-title="Gallery" href="{{ asset($img->photo_name ) }} ">
-                <img class="img-responsive" alt="" src="{{ asset($img->photo_name ) }} " data-echo="{{ asset($img->photo_name ) }} " />
+              <a data-lightbox="image-1" data-title="Gallery" href="{{ $img->photo_name }} ">
+                <img class="img-responsive" alt="" src="{{ $img->photo_name  }} " data-echo="{{ $img->photo_name  }} " />
               </a>
             </div><!-- /.single-product-gallery-item -->
             @endforeach --}}
@@ -103,7 +82,7 @@
               @foreach($multiImag as $img)
                 <div class="item">
                   <a class="horizontal-thumb active" data-target="#owl-single-product" data-slide="1" href="#slide{{ $img->id }}">
-                    <img class="img-responsive" width="85" alt="" src="{{ asset($img->photo_name ) }} " data-echo="{{ asset($img->photo_name ) }} " />
+                    <img class="img-responsive" width="85" alt="" src="{{ $img->photo_name  }} " data-echo="{{$img->photo_name  }} " />
                   </a>
                 </div>
               @endforeach
@@ -390,7 +369,7 @@
             <div class="product">
               <div class="product-image">
                 <div class="image">
-                  <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"><img  src="{{ asset($product->image_link) }}" alt="{{ $product->product_name_en}}" height="200"></a>
+                  <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}"><img  src="{{ $product->image_link }}" alt="{{ $product->product_name_en}}" height="200"></a>
                 </div><!-- /.image -->
                 {{-- <div class="tag sale"><span>sale</span></div> --}}
               </div><!-- /.product-image -->
@@ -438,7 +417,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="wide-banner cnt-strip">
-            <div class="image"> <img class="img-responsive" src="{{asset('frontend/assets/images/banners/home-banner.jpg')}}" alt=""> </div>
+            <div class="image"> <img class="img-responsive" src="/frontend/assets/images/banners/home-banner.jpg" alt=""> </div>
             <div class="strip strip-text">
               <div class="strip-inner">
                 <h2 class="text-right">New Palettes<br>

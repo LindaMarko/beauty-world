@@ -6,6 +6,7 @@ $featured = App\Models\Product::where('featured',1)
   ['price', '!=', '0.0'],
   ['brand', '!=', 'benefit'],
   ['brand', '!=', 'glossier'],
+  ['brand', '!=', 'deciem'],
 ])
 ->limit(9)->get();
 @endphp

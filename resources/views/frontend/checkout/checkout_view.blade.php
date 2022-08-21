@@ -93,7 +93,7 @@ My Checkout
                     @foreach($cartItems as $item)
                     <li>
                       <strong>Image: </strong>
-                      <img src="{{ asset($item->options->image) }}" style="height: 50px; width: 50px;">
+                      <img src="{{$item->options->image }}" style="height: 50px; width: 50px;">
                     </li>
                     <li>
                       <strong>Qty: </strong>
@@ -123,21 +123,21 @@ My Checkout
                 </div>
                 <div class="row" style="padding: 15px;">
                   <div class="col-md-4">
-                    <label for="">Stripe</label>
-                    <input type="radio" name="payment_method" value="stripe">
-                    <img src="{{ asset('frontend/assets/images/payments/4.png') }}">
+                    <label for="">PayPal</label>
+                    <input type="radio" name="payment_method" value="paypal">
+                    <img src="/frontend/assets/images/payments/1.png">
                   </div> <!-- end col md 4 -->
 
                   <div class="col-md-4">
                     <label for="">Card</label>
                     <input type="radio" name="payment_method" value="card">
-                    <img src="{{ asset('frontend/assets/images/payments/3.png') }}">
+                    <img src="/frontend/assets/images/payments/4.png">
                   </div> <!-- end col md 4 -->
 
                   <div class="col-md-4">
                      <label for="">Cash</label>
                       <input type="radio" name="payment_method" value="cash">
-                      <img src="{{ asset('frontend/assets/images/payments/2.png') }}">
+                      <img src="/frontend/assets/images/payments/2.png">
                   </div> <!-- end col md 4 -->
 
                   <button type="button" class="btn-upper btn btn-primary checkout-page-button pull-right" style="margin-top: 50px;">Proceed to Payment</button>
@@ -157,7 +157,6 @@ My Checkout
     <!-- ============================================== FEATURED PRODUCTS : END ============================================== -->
 </div><!-- /.container -->
 </div><!-- /.body-content -->
-
 
 
 @endsection
