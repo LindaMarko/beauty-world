@@ -18,7 +18,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\Admin::factory()->create();
+        \App\Models\Admin::create([
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => 'password',
+        ]);
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
@@ -71,7 +75,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'slider_img'=>'upload/slider/1741524457825875.jpg',
-                'title'=>'',
+                'title'=>'Beauty Trends',
                 'description'=>'',
              ],
 
