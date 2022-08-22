@@ -1,3 +1,17 @@
+## Clean install
+
+1. git clone
+2. composer install
+3. npm install && npm run dev
+4. cp .env.example .env
+5. setup database
+6. php artisan migrate
+7. php artisan db:seed
+8. php artisan db:seed --class=ProductSeeder
+9. php artisan serve
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
